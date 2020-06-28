@@ -23,6 +23,14 @@
 		32F31BD824A8F75B00E07AAF /* DigiTinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD124A8F75B00E07AAF /* DigiTinder.swift */; };
 		32F31BD924A8F75B00E07AAF /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD324A8F75B00E07AAF /* Endpoints.swift */; };
 		32F31BDA24A8F75B00E07AAF /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD424A8F75B00E07AAF /* PersistenceError.swift */; };
+		32F31BEC24A8FF7000E07AAF /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BDD24A8FF6F00E07AAF /* PostListPresenter.swift */; };
+		32F31BED24A8FF7000E07AAF /* PostListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BDF24A8FF6F00E07AAF /* PostListWireFrame.swift */; };
+		32F31BEE24A8FF7000E07AAF /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE124A8FF6F00E07AAF /* PostListView.swift */; };
+		32F31BEF24A8FF7000E07AAF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE224A8FF6F00E07AAF /* PostTableViewCell.swift */; };
+		32F31BF024A8FF7000E07AAF /* PostListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE524A8FF7000E07AAF /* PostListLocalDataManager.swift */; };
+		32F31BF124A8FF7000E07AAF /* PostListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE724A8FF7000E07AAF /* PostListRemoteDataManager.swift */; };
+		32F31BF224A8FF7000E07AAF /* PostListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE924A8FF7000E07AAF /* PostListProtocols.swift */; };
+		32F31BF324A8FF7000E07AAF /* PostListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BEB24A8FF7000E07AAF /* PostListInteractor.swift */; };
 		93A4A4BC9E6B9D473C2C5F85 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C49A8308DA0693AE385B277 /* Pods_DigiTinder_DigiTinderUITests.framework */; };
 		B54432A4C5D95396E4E75619 /* Pods_DigiTinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB98A85684EF99A8E89C7FE /* Pods_DigiTinderTests.framework */; };
 		E2A0C5605BC6E1ECE8B0619D /* Pods_DigiTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70711B2D8A4EFE67566A2830 /* Pods_DigiTinder.framework */; };
@@ -71,6 +79,14 @@
 		32F31BD124A8F75B00E07AAF /* DigiTinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinder.swift; sourceTree = "<group>"; };
 		32F31BD324A8F75B00E07AAF /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		32F31BD424A8F75B00E07AAF /* PersistenceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		32F31BDD24A8FF6F00E07AAF /* PostListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
+		32F31BDF24A8FF6F00E07AAF /* PostListWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListWireFrame.swift; sourceTree = "<group>"; };
+		32F31BE124A8FF6F00E07AAF /* PostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		32F31BE224A8FF6F00E07AAF /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		32F31BE524A8FF7000E07AAF /* PostListLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLocalDataManager.swift; sourceTree = "<group>"; };
+		32F31BE724A8FF7000E07AAF /* PostListRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListRemoteDataManager.swift; sourceTree = "<group>"; };
+		32F31BE924A8FF7000E07AAF /* PostListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListProtocols.swift; sourceTree = "<group>"; };
+		32F31BEB24A8FF7000E07AAF /* PostListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListInteractor.swift; sourceTree = "<group>"; };
 		3C49A8308DA0693AE385B277 /* Pods_DigiTinder_DigiTinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder_DigiTinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70711B2D8A4EFE67566A2830 /* Pods_DigiTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD1FACE5CF4BABFD4F49CBB /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +149,7 @@
 		32F31B6324A8EE3D00E07AAF /* DigiTinder */ = {
 			isa = PBXGroup;
 			children = (
+				32F31BDB24A8FF6F00E07AAF /* Cards */,
 				32F31BD224A8F75B00E07AAF /* Commons */,
 				32F31BCD24A8F75B00E07AAF /* Entity */,
 				32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */,
@@ -183,6 +200,85 @@
 				32F31BD424A8F75B00E07AAF /* PersistenceError.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		32F31BDB24A8FF6F00E07AAF /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BDC24A8FF6F00E07AAF /* Presenter */,
+				32F31BDE24A8FF6F00E07AAF /* WireFrame */,
+				32F31BE024A8FF6F00E07AAF /* View */,
+				32F31BE324A8FF7000E07AAF /* DataHandler */,
+				32F31BE824A8FF7000E07AAF /* Protocols */,
+				32F31BEA24A8FF7000E07AAF /* Interactor */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		32F31BDC24A8FF6F00E07AAF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BDD24A8FF6F00E07AAF /* PostListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		32F31BDE24A8FF6F00E07AAF /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BDF24A8FF6F00E07AAF /* PostListWireFrame.swift */,
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		32F31BE024A8FF6F00E07AAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BE124A8FF6F00E07AAF /* PostListView.swift */,
+				32F31BE224A8FF6F00E07AAF /* PostTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		32F31BE324A8FF7000E07AAF /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BE424A8FF7000E07AAF /* Local */,
+				32F31BE624A8FF7000E07AAF /* Remote */,
+			);
+			path = DataHandler;
+			sourceTree = "<group>";
+		};
+		32F31BE424A8FF7000E07AAF /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BE524A8FF7000E07AAF /* PostListLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		32F31BE624A8FF7000E07AAF /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BE724A8FF7000E07AAF /* PostListRemoteDataManager.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		32F31BE824A8FF7000E07AAF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BE924A8FF7000E07AAF /* PostListProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		32F31BEA24A8FF7000E07AAF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				32F31BEB24A8FF7000E07AAF /* PostListInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		7105D3194EE8FD89D596C4A6 /* Pods */ = {
@@ -448,16 +544,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F31BF224A8FF7000E07AAF /* PostListProtocols.swift in Sources */,
 				32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */,
 				32F31B6924A8EE3D00E07AAF /* ViewController.swift in Sources */,
 				32F31BD624A8F75B00E07AAF /* DigiTinderModel.swift in Sources */,
 				32F31BD824A8F75B00E07AAF /* DigiTinder.swift in Sources */,
 				32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */,
+				32F31BF324A8FF7000E07AAF /* PostListInteractor.swift in Sources */,
+				32F31BEE24A8FF7000E07AAF /* PostListView.swift in Sources */,
 				32F31B6F24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld in Sources */,
+				32F31BEF24A8FF7000E07AAF /* PostTableViewCell.swift in Sources */,
 				32F31BD524A8F75B00E07AAF /* Post+CoreDataProperties.swift in Sources */,
 				32F31BD924A8F75B00E07AAF /* Endpoints.swift in Sources */,
 				32F31BDA24A8F75B00E07AAF /* PersistenceError.swift in Sources */,
+				32F31BEC24A8FF7000E07AAF /* PostListPresenter.swift in Sources */,
+				32F31BED24A8FF7000E07AAF /* PostListWireFrame.swift in Sources */,
+				32F31BF124A8FF7000E07AAF /* PostListRemoteDataManager.swift in Sources */,
 				32F31B6724A8EE3D00E07AAF /* SceneDelegate.swift in Sources */,
+				32F31BF024A8FF7000E07AAF /* PostListLocalDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
