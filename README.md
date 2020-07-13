@@ -1,6 +1,6 @@
 # DigiTinder: Test Project
 
-This repository contains a detailed test iOS App uses VIPER design pattern and certain third party libraries to achieve and build the features outlined in test project using third-party libraries/frameworks like Alamofire, AlamofireImage, PKHUD, CoreData etc.
+This repository contains a detailed test iOS App uses VIPER design pattern and certain third party libraries to achieve and build the features outlined in test project using third-party libraries/frameworks like CryptoSwift.
 
 
 ## Read the below listed article.
@@ -15,6 +15,12 @@ pod install
 open DigiTinder.xcworkspace
 ```
 
+### Third-Party tools
+Project uses thirdparty tools/dependecies which can be installed using 
+```pod install``` commaned by navigating to the project directory.
+
+    CryptoSwift https://cryptoswift.io/
+    
 ### License
 ```
    Copyright (C) 2020 Workmetrik Technologies Private Limited
