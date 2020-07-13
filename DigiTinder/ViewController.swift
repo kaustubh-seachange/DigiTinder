@@ -109,6 +109,7 @@ extension ViewController {
         if isAdded {
             digiTinderPresenterView.reloadData()
         }
+        self.getProfiles()
 
 //        let service = APIService()
 //        service.getDataWith { (result) in

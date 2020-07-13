@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		13B092172D4A39043CA27F96 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */; };
+		3209A89A24BCAE7F0043AF9C /* DigiTinderSwipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89824BCAE7F0043AF9C /* DigiTinderSwipeModel.swift */; };
+		3209A89B24BCAE7F0043AF9C /* DigiTinderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89924BCAE7F0043AF9C /* DigiTinderDataSource.swift */; };
+		3209A89D24BCAEB80043AF9C /* TinderUserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89C24BCAEB70043AF9C /* TinderUserResponseModel.swift */; };
+		3209A8A024BCAF150043AF9C /* TinderUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */; };
+		3209A8A124BCAF150043AF9C /* TinderUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */; };
+		3209A8A424BCAF3C0043AF9C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A8A324BCAF3C0043AF9C /* Extension.swift */; };
+		3209A8A724BCAFAA0043AF9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3209A8A524BCAFAA0043AF9C /* Main.storyboard */; };
 		32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FBE24BB026F00582D96 /* DTSecureInfo.swift */; };
 		32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */; };
 		32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD724BB152400582D96 /* DigiTinderView.swift */; };
-		32437FDE24BB15D300582D96 /* DTBtnMacroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FDB24BB15D200582D96 /* DTBtnMacroClass.swift */; };
-		32437FDF24BB15D300582D96 /* DTLabelMacroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FDC24BB15D200582D96 /* DTLabelMacroClass.swift */; };
-		32437FE024BB15D300582D96 /* DTImageMacroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FDD24BB15D300582D96 /* DTImageMacroClass.swift */; };
-		32437FE224BB15DA00582D96 /* DigiTinderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FE124BB15DA00582D96 /* DigiTinderInteractor.swift */; };
-		32437FE624BB186900582D96 /* DigiTinderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FE524BB186900582D96 /* DigiTinderBtn.swift */; };
 		3280A65624BA3679005E74CE /* sampleresponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3280A65524BA3679005E74CE /* sampleresponse.json */; };
 		3280A65B24BA39EA005E74CE /* DTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65824BA39EA005E74CE /* DTRouter.swift */; };
 		3280A65C24BA39EA005E74CE /* DTHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65924BA39EA005E74CE /* DTHTTP.swift */; };
@@ -31,11 +33,8 @@
 		32F31B7F24A8EE4000E07AAF /* DigiTinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B7E24A8EE4000E07AAF /* DigiTinderTests.swift */; };
 		32F31B8A24A8EE4000E07AAF /* DigiTinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B8924A8EE4000E07AAF /* DigiTinderUITests.swift */; };
 		32F31BCC24A8F43400E07AAF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 32F31BCB24A8F43400E07AAF /* README.md */; };
-		32F31BD624A8F75B00E07AAF /* TinderUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BCF24A8F75B00E07AAF /* TinderUser.swift */; };
 		32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */; };
-		32F31BD824A8F75B00E07AAF /* DigiTinderManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD124A8F75B00E07AAF /* DigiTinderManagedObject.swift */; };
 		32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */; };
-		32F31BDA24A8F75B00E07AAF /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD424A8F75B00E07AAF /* PersistenceError.swift */; };
 		4676C8D4CF7BD6F34BB07169 /* Pods_DigiTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */; };
 		BC2AFFBC0F46E80513F91574 /* Pods_DigiTinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,14 +57,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3209A89824BCAE7F0043AF9C /* DigiTinderSwipeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderSwipeModel.swift; sourceTree = "<group>"; };
+		3209A89924BCAE7F0043AF9C /* DigiTinderDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderDataSource.swift; sourceTree = "<group>"; };
+		3209A89C24BCAEB70043AF9C /* TinderUserResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderUserResponseModel.swift; sourceTree = "<group>"; };
+		3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TinderUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TinderUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3209A8A324BCAF3C0043AF9C /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		3209A8A624BCAFAA0043AF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32437FBE24BB026F00582D96 /* DTSecureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTSecureInfo.swift; sourceTree = "<group>"; };
 		32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderFoundryView.swift; sourceTree = "<group>"; };
 		32437FD724BB152400582D96 /* DigiTinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderView.swift; sourceTree = "<group>"; };
-		32437FDB24BB15D200582D96 /* DTBtnMacroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTBtnMacroClass.swift; sourceTree = "<group>"; };
-		32437FDC24BB15D200582D96 /* DTLabelMacroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTLabelMacroClass.swift; sourceTree = "<group>"; };
-		32437FDD24BB15D300582D96 /* DTImageMacroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTImageMacroClass.swift; sourceTree = "<group>"; };
-		32437FE124BB15DA00582D96 /* DigiTinderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderInteractor.swift; sourceTree = "<group>"; };
-		32437FE524BB186900582D96 /* DigiTinderBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderBtn.swift; sourceTree = "<group>"; };
 		3280A65524BA3679005E74CE /* sampleresponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleresponse.json; sourceTree = "<group>"; };
 		3280A65824BA39EA005E74CE /* DTRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTRouter.swift; sourceTree = "<group>"; };
 		3280A65924BA39EA005E74CE /* DTHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTHTTP.swift; sourceTree = "<group>"; };
@@ -87,11 +88,8 @@
 		32F31B8924A8EE4000E07AAF /* DigiTinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiTinderUITests.swift; sourceTree = "<group>"; };
 		32F31B8B24A8EE4000E07AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32F31BCB24A8F43400E07AAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		32F31BCF24A8F75B00E07AAF /* TinderUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderUser.swift; sourceTree = "<group>"; };
 		32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
-		32F31BD124A8F75B00E07AAF /* DigiTinderManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderManagedObject.swift; sourceTree = "<group>"; };
 		32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTEndpointAPI.swift; sourceTree = "<group>"; };
-		32F31BD424A8F75B00E07AAF /* PersistenceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
 		6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.release.xcconfig"; sourceTree = "<group>"; };
 		99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +129,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3209A89724BCAE7F0043AF9C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3209A89824BCAE7F0043AF9C /* DigiTinderSwipeModel.swift */,
+				3209A89924BCAE7F0043AF9C /* DigiTinderDataSource.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3209A8A224BCAF3C0043AF9C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3209A8A324BCAF3C0043AF9C /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		32437FBD24BB025100582D96 /* Secure */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,30 +154,11 @@
 			path = Secure;
 			sourceTree = "<group>";
 		};
-		32437FC424BB0ED200582D96 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				32437FE124BB15DA00582D96 /* DigiTinderInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		32437FC624BB0ED200582D96 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				32437FDB24BB15D200582D96 /* DTBtnMacroClass.swift */,
-				32437FDD24BB15D300582D96 /* DTImageMacroClass.swift */,
-				32437FDC24BB15D200582D96 /* DTLabelMacroClass.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		32437FCA24BB0ED200582D96 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
 				32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */,
 				32437FD724BB152400582D96 /* DigiTinderView.swift */,
-				32437FE524BB186900582D96 /* DigiTinderBtn.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -226,6 +222,7 @@
 				32F31B7524A8EE4000E07AAF /* Info.plist */,
 				32F31B7024A8EE4000E07AAF /* Assets.xcassets */,
 				32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */,
+				3209A8A524BCAFAA0043AF9C /* Main.storyboard */,
 				32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */,
 				32F31B6624A8EE3D00E07AAF /* SceneDelegate.swift */,
 				32F31B6824A8EE3D00E07AAF /* ViewController.swift */,
@@ -234,6 +231,7 @@
 				32F31BCD24A8F75B00E07AAF /* Models */,
 				3299EBD724BA13E400245711 /* Network */,
 				32F31BF724A9128600E07AAF /* Views */,
+				3209A8A224BCAF3C0043AF9C /* Extension */,
 			);
 			path = DigiTinder;
 			sourceTree = "<group>";
@@ -259,7 +257,7 @@
 		32F31BCD24A8F75B00E07AAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32F31BCF24A8F75B00E07AAF /* TinderUser.swift */,
+				3209A89C24BCAEB70043AF9C /* TinderUserResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,10 +265,10 @@
 		32F31BD224A8F75B00E07AAF /* Datastore */ = {
 			isa = PBXGroup;
 			children = (
-				32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */,
+				3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */,
+				3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */,
 				32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */,
-				32F31BD424A8F75B00E07AAF /* PersistenceError.swift */,
-				32F31BD124A8F75B00E07AAF /* DigiTinderManagedObject.swift */,
+				32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */,
 			);
 			path = Datastore;
 			sourceTree = "<group>";
@@ -278,8 +276,7 @@
 		32F31BF724A9128600E07AAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32437FC424BB0ED200582D96 /* Interactor */,
-				32437FC624BB0ED200582D96 /* Router */,
+				3209A89724BCAE7F0043AF9C /* Entity */,
 				32437FCA24BB0ED200582D96 /* SubViews */,
 			);
 			path = Views;
@@ -418,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F31B7424A8EE4000E07AAF /* LaunchScreen.storyboard in Resources */,
+				3209A8A724BCAFAA0043AF9C /* Main.storyboard in Resources */,
 				3280A65624BA3679005E74CE /* sampleresponse.json in Resources */,
 				32F31B7124A8EE4000E07AAF /* Assets.xcassets in Resources */,
 				32F31BCC24A8F43400E07AAF /* README.md in Resources */,
@@ -548,28 +546,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209A8A124BCAF150043AF9C /* TinderUser+CoreDataProperties.swift in Sources */,
 				32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */,
-				32437FDE24BB15D300582D96 /* DTBtnMacroClass.swift in Sources */,
 				32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */,
 				32F31B6924A8EE3D00E07AAF /* ViewController.swift in Sources */,
 				3299EBDB24BA142100245711 /* DTNetworkManager.swift in Sources */,
 				3280A65C24BA39EA005E74CE /* DTHTTP.swift in Sources */,
-				32F31BD624A8F75B00E07AAF /* TinderUser.swift in Sources */,
 				3299EBE524BA16A000245711 /* DTResourceCaching.swift in Sources */,
-				32F31BD824A8F75B00E07AAF /* DigiTinderManagedObject.swift in Sources */,
 				32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */,
 				32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */,
-				32437FE024BB15D300582D96 /* DTImageMacroClass.swift in Sources */,
 				3280A65D24BA39EA005E74CE /* DTEncoding.swift in Sources */,
-				32437FE624BB186900582D96 /* DigiTinderBtn.swift in Sources */,
 				32F31B6F24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld in Sources */,
 				32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */,
-				32437FDF24BB15D300582D96 /* DTLabelMacroClass.swift in Sources */,
-				32F31BDA24A8F75B00E07AAF /* PersistenceError.swift in Sources */,
-				32437FE224BB15DA00582D96 /* DigiTinderInteractor.swift in Sources */,
+				3209A89D24BCAEB80043AF9C /* TinderUserResponseModel.swift in Sources */,
+				3209A89A24BCAE7F0043AF9C /* DigiTinderSwipeModel.swift in Sources */,
 				3280A65B24BA39EA005E74CE /* DTRouter.swift in Sources */,
+				3209A8A424BCAF3C0043AF9C /* Extension.swift in Sources */,
 				32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */,
 				32F31B6724A8EE3D00E07AAF /* SceneDelegate.swift in Sources */,
+				3209A8A024BCAF150043AF9C /* TinderUser+CoreDataClass.swift in Sources */,
+				3209A89B24BCAE7F0043AF9C /* DigiTinderDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +601,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3209A8A524BCAFAA0043AF9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3209A8A624BCAFAA0043AF9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
