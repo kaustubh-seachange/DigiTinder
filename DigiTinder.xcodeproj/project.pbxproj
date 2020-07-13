@@ -7,33 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13B092172D4A39043CA27F96 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */; };
+		32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FBE24BB026F00582D96 /* DTSecureInfo.swift */; };
+		32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */; };
+		32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD724BB152400582D96 /* DigiTinderView.swift */; };
+		32437FDE24BB15D300582D96 /* DTBtnMacroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FDB24BB15D200582D96 /* DTBtnMacroClass.swift */; };
+		32437FDF24BB15D300582D96 /* DTLabelMacroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FDC24BB15D200582D96 /* DTLabelMacroClass.swift */; };
+		32437FE024BB15D300582D96 /* DTImageMacroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FDD24BB15D300582D96 /* DTImageMacroClass.swift */; };
+		32437FE224BB15DA00582D96 /* DigiTinderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FE124BB15DA00582D96 /* DigiTinderInteractor.swift */; };
+		32437FE624BB186900582D96 /* DigiTinderBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FE524BB186900582D96 /* DigiTinderBtn.swift */; };
+		3280A65624BA3679005E74CE /* sampleresponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3280A65524BA3679005E74CE /* sampleresponse.json */; };
+		3280A65B24BA39EA005E74CE /* DTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65824BA39EA005E74CE /* DTRouter.swift */; };
+		3280A65C24BA39EA005E74CE /* DTHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65924BA39EA005E74CE /* DTHTTP.swift */; };
+		3280A65D24BA39EA005E74CE /* DTEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65A24BA39EA005E74CE /* DTEncoding.swift */; };
+		3299EBDB24BA142100245711 /* DTNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299EBDA24BA142100245711 /* DTNetworkManager.swift */; };
+		3299EBE524BA16A000245711 /* DTResourceCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3299EBE424BA16A000245711 /* DTResourceCaching.swift */; };
 		32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */; };
 		32F31B6724A8EE3D00E07AAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6624A8EE3D00E07AAF /* SceneDelegate.swift */; };
 		32F31B6924A8EE3D00E07AAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6824A8EE3D00E07AAF /* ViewController.swift */; };
-		32F31B6C24A8EE3D00E07AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F31B6A24A8EE3D00E07AAF /* Main.storyboard */; };
 		32F31B6F24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */; };
 		32F31B7124A8EE4000E07AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F31B7024A8EE4000E07AAF /* Assets.xcassets */; };
 		32F31B7424A8EE4000E07AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */; };
 		32F31B7F24A8EE4000E07AAF /* DigiTinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B7E24A8EE4000E07AAF /* DigiTinderTests.swift */; };
 		32F31B8A24A8EE4000E07AAF /* DigiTinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B8924A8EE4000E07AAF /* DigiTinderUITests.swift */; };
 		32F31BCC24A8F43400E07AAF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 32F31BCB24A8F43400E07AAF /* README.md */; };
-		32F31BD524A8F75B00E07AAF /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BCE24A8F75B00E07AAF /* Post+CoreDataProperties.swift */; };
-		32F31BD624A8F75B00E07AAF /* DigiTinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BCF24A8F75B00E07AAF /* DigiTinderModel.swift */; };
+		32F31BD624A8F75B00E07AAF /* TinderUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BCF24A8F75B00E07AAF /* TinderUser.swift */; };
 		32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */; };
-		32F31BD824A8F75B00E07AAF /* DigiTinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD124A8F75B00E07AAF /* DigiTinder.swift */; };
-		32F31BD924A8F75B00E07AAF /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD324A8F75B00E07AAF /* Endpoints.swift */; };
+		32F31BD824A8F75B00E07AAF /* DigiTinderManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD124A8F75B00E07AAF /* DigiTinderManagedObject.swift */; };
+		32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */; };
 		32F31BDA24A8F75B00E07AAF /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD424A8F75B00E07AAF /* PersistenceError.swift */; };
-		32F31BEC24A8FF7000E07AAF /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BDD24A8FF6F00E07AAF /* PostListPresenter.swift */; };
-		32F31BED24A8FF7000E07AAF /* PostListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BDF24A8FF6F00E07AAF /* PostListWireFrame.swift */; };
-		32F31BEE24A8FF7000E07AAF /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE124A8FF6F00E07AAF /* PostListView.swift */; };
-		32F31BEF24A8FF7000E07AAF /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE224A8FF6F00E07AAF /* PostTableViewCell.swift */; };
-		32F31BF024A8FF7000E07AAF /* PostListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE524A8FF7000E07AAF /* PostListLocalDataManager.swift */; };
-		32F31BF124A8FF7000E07AAF /* PostListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE724A8FF7000E07AAF /* PostListRemoteDataManager.swift */; };
-		32F31BF224A8FF7000E07AAF /* PostListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BE924A8FF7000E07AAF /* PostListProtocols.swift */; };
-		32F31BF324A8FF7000E07AAF /* PostListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BEB24A8FF7000E07AAF /* PostListInteractor.swift */; };
-		93A4A4BC9E6B9D473C2C5F85 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C49A8308DA0693AE385B277 /* Pods_DigiTinder_DigiTinderUITests.framework */; };
-		B54432A4C5D95396E4E75619 /* Pods_DigiTinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDB98A85684EF99A8E89C7FE /* Pods_DigiTinderTests.framework */; };
-		E2A0C5605BC6E1ECE8B0619D /* Pods_DigiTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70711B2D8A4EFE67566A2830 /* Pods_DigiTinder.framework */; };
+		4676C8D4CF7BD6F34BB07169 /* Pods_DigiTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */; };
+		BC2AFFBC0F46E80513F91574 /* Pods_DigiTinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,14 +58,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FF964179EA1880FE82B6F33 /* Pods-DigiTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.debug.xcconfig"; sourceTree = "<group>"; };
-		1FC9E0447DFFFAB03DD7CF9B /* Pods-DigiTinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinderTests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinderTests/Pods-DigiTinderTests.release.xcconfig"; sourceTree = "<group>"; };
-		246252F69B7CA24D902CB221 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		32437FBE24BB026F00582D96 /* DTSecureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTSecureInfo.swift; sourceTree = "<group>"; };
+		32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderFoundryView.swift; sourceTree = "<group>"; };
+		32437FD724BB152400582D96 /* DigiTinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderView.swift; sourceTree = "<group>"; };
+		32437FDB24BB15D200582D96 /* DTBtnMacroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTBtnMacroClass.swift; sourceTree = "<group>"; };
+		32437FDC24BB15D200582D96 /* DTLabelMacroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTLabelMacroClass.swift; sourceTree = "<group>"; };
+		32437FDD24BB15D300582D96 /* DTImageMacroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTImageMacroClass.swift; sourceTree = "<group>"; };
+		32437FE124BB15DA00582D96 /* DigiTinderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderInteractor.swift; sourceTree = "<group>"; };
+		32437FE524BB186900582D96 /* DigiTinderBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderBtn.swift; sourceTree = "<group>"; };
+		3280A65524BA3679005E74CE /* sampleresponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleresponse.json; sourceTree = "<group>"; };
+		3280A65824BA39EA005E74CE /* DTRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTRouter.swift; sourceTree = "<group>"; };
+		3280A65924BA39EA005E74CE /* DTHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTHTTP.swift; sourceTree = "<group>"; };
+		3280A65A24BA39EA005E74CE /* DTEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTEncoding.swift; sourceTree = "<group>"; };
+		3299EBDA24BA142100245711 /* DTNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTNetworkManager.swift; sourceTree = "<group>"; };
+		3299EBE424BA16A000245711 /* DTResourceCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTResourceCaching.swift; sourceTree = "<group>"; };
 		32F31B6124A8EE3D00E07AAF /* DigiTinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigiTinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32F31B6624A8EE3D00E07AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		32F31B6824A8EE3D00E07AAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		32F31B6B24A8EE3D00E07AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32F31B6E24A8EE3D00E07AAF /* DigiTinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DigiTinder.xcdatamodel; sourceTree = "<group>"; };
 		32F31B7024A8EE4000E07AAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32F31B7324A8EE4000E07AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,26 +87,20 @@
 		32F31B8924A8EE4000E07AAF /* DigiTinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiTinderUITests.swift; sourceTree = "<group>"; };
 		32F31B8B24A8EE4000E07AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32F31BCB24A8F43400E07AAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		32F31BCE24A8F75B00E07AAF /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		32F31BCF24A8F75B00E07AAF /* DigiTinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderModel.swift; sourceTree = "<group>"; };
+		32F31BCF24A8F75B00E07AAF /* TinderUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderUser.swift; sourceTree = "<group>"; };
 		32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
-		32F31BD124A8F75B00E07AAF /* DigiTinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinder.swift; sourceTree = "<group>"; };
-		32F31BD324A8F75B00E07AAF /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		32F31BD124A8F75B00E07AAF /* DigiTinderManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderManagedObject.swift; sourceTree = "<group>"; };
+		32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTEndpointAPI.swift; sourceTree = "<group>"; };
 		32F31BD424A8F75B00E07AAF /* PersistenceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
-		32F31BDD24A8FF6F00E07AAF /* PostListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
-		32F31BDF24A8FF6F00E07AAF /* PostListWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListWireFrame.swift; sourceTree = "<group>"; };
-		32F31BE124A8FF6F00E07AAF /* PostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
-		32F31BE224A8FF6F00E07AAF /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		32F31BE524A8FF7000E07AAF /* PostListLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLocalDataManager.swift; sourceTree = "<group>"; };
-		32F31BE724A8FF7000E07AAF /* PostListRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListRemoteDataManager.swift; sourceTree = "<group>"; };
-		32F31BE924A8FF7000E07AAF /* PostListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListProtocols.swift; sourceTree = "<group>"; };
-		32F31BEB24A8FF7000E07AAF /* PostListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListInteractor.swift; sourceTree = "<group>"; };
-		3C49A8308DA0693AE385B277 /* Pods_DigiTinder_DigiTinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder_DigiTinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70711B2D8A4EFE67566A2830 /* Pods_DigiTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAD1FACE5CF4BABFD4F49CBB /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C24CC2ECA059FEDD3CA3F3F4 /* Pods-DigiTinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinderTests.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinderTests/Pods-DigiTinderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D3907C83D62FE64EEC1E23E0 /* Pods-DigiTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.release.xcconfig"; sourceTree = "<group>"; };
-		DDB98A85684EF99A8E89C7FE /* Pods_DigiTinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.release.xcconfig"; sourceTree = "<group>"; };
+		99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A68245652CED81BABE5A94EB /* Pods-DigiTinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinderTests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinderTests/Pods-DigiTinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF04DC50A6A716EA289CBA40 /* Pods-DigiTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.debug.xcconfig"; sourceTree = "<group>"; };
+		B2E6B7DB6674C97A52A9CABA /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder_DigiTinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2F141836F7BEEB688E04162 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F492CEC97837D7A55423D114 /* Pods-DigiTinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinderTests.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinderTests/Pods-DigiTinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A0C5605BC6E1ECE8B0619D /* Pods_DigiTinder.framework in Frameworks */,
+				4676C8D4CF7BD6F34BB07169 /* Pods_DigiTinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B54432A4C5D95396E4E75619 /* Pods_DigiTinderTests.framework in Frameworks */,
+				BC2AFFBC0F46E80513F91574 /* Pods_DigiTinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,20 +124,86 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93A4A4BC9E6B9D473C2C5F85 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */,
+				13B092172D4A39043CA27F96 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32437FBD24BB025100582D96 /* Secure */ = {
+			isa = PBXGroup;
+			children = (
+				32437FBE24BB026F00582D96 /* DTSecureInfo.swift */,
+			);
+			path = Secure;
+			sourceTree = "<group>";
+		};
+		32437FC424BB0ED200582D96 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				32437FE124BB15DA00582D96 /* DigiTinderInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		32437FC624BB0ED200582D96 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				32437FDB24BB15D200582D96 /* DTBtnMacroClass.swift */,
+				32437FDD24BB15D300582D96 /* DTImageMacroClass.swift */,
+				32437FDC24BB15D200582D96 /* DTLabelMacroClass.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		32437FCA24BB0ED200582D96 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */,
+				32437FD724BB152400582D96 /* DigiTinderView.swift */,
+				32437FE524BB186900582D96 /* DigiTinderBtn.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		3280A65724BA386E005E74CE /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				3280A65A24BA39EA005E74CE /* DTEncoding.swift */,
+				3280A65924BA39EA005E74CE /* DTHTTP.swift */,
+				3280A65824BA39EA005E74CE /* DTRouter.swift */,
+				32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		3299EBD724BA13E400245711 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3280A65524BA3679005E74CE /* sampleresponse.json */,
+				3299EBDA24BA142100245711 /* DTNetworkManager.swift */,
+				3299EBE424BA16A000245711 /* DTResourceCaching.swift */,
+				3280A65724BA386E005E74CE /* Layer */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3299EBDE24BA154200245711 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				32F31B7D24A8EE4000E07AAF /* DigiTinderTests */,
+				32F31B8824A8EE4000E07AAF /* DigiTinderUITests */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
 		32F31B5824A8EE3D00E07AAF = {
 			isa = PBXGroup;
 			children = (
 				32F31BCB24A8F43400E07AAF /* README.md */,
 				32F31B6324A8EE3D00E07AAF /* DigiTinder */,
-				32F31B7D24A8EE4000E07AAF /* DigiTinderTests */,
-				32F31B8824A8EE4000E07AAF /* DigiTinderUITests */,
+				3299EBDE24BA154200245711 /* Testing */,
 				32F31B6224A8EE3D00E07AAF /* Products */,
 				7105D3194EE8FD89D596C4A6 /* Pods */,
 				A8B4A562E9F0465DBB583EF2 /* Frameworks */,
@@ -149,17 +223,17 @@
 		32F31B6324A8EE3D00E07AAF /* DigiTinder */ = {
 			isa = PBXGroup;
 			children = (
-				32F31BDB24A8FF6F00E07AAF /* Cards */,
-				32F31BD224A8F75B00E07AAF /* Commons */,
-				32F31BCD24A8F75B00E07AAF /* Entity */,
+				32F31B7524A8EE4000E07AAF /* Info.plist */,
+				32F31B7024A8EE4000E07AAF /* Assets.xcassets */,
+				32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */,
 				32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */,
 				32F31B6624A8EE3D00E07AAF /* SceneDelegate.swift */,
 				32F31B6824A8EE3D00E07AAF /* ViewController.swift */,
-				32F31B6A24A8EE3D00E07AAF /* Main.storyboard */,
-				32F31B7024A8EE4000E07AAF /* Assets.xcassets */,
-				32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */,
-				32F31B7524A8EE4000E07AAF /* Info.plist */,
-				32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */,
+				32437FBD24BB025100582D96 /* Secure */,
+				32F31BD224A8F75B00E07AAF /* Datastore */,
+				32F31BCD24A8F75B00E07AAF /* Models */,
+				3299EBD724BA13E400245711 /* Network */,
+				32F31BF724A9128600E07AAF /* Views */,
 			);
 			path = DigiTinder;
 			sourceTree = "<group>";
@@ -182,114 +256,44 @@
 			path = DigiTinderUITests;
 			sourceTree = "<group>";
 		};
-		32F31BCD24A8F75B00E07AAF /* Entity */ = {
+		32F31BCD24A8F75B00E07AAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32F31BCE24A8F75B00E07AAF /* Post+CoreDataProperties.swift */,
-				32F31BCF24A8F75B00E07AAF /* DigiTinderModel.swift */,
+				32F31BCF24A8F75B00E07AAF /* TinderUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32F31BD224A8F75B00E07AAF /* Datastore */ = {
+			isa = PBXGroup;
+			children = (
+				32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */,
 				32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */,
-				32F31BD124A8F75B00E07AAF /* DigiTinder.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		32F31BD224A8F75B00E07AAF /* Commons */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BD324A8F75B00E07AAF /* Endpoints.swift */,
 				32F31BD424A8F75B00E07AAF /* PersistenceError.swift */,
+				32F31BD124A8F75B00E07AAF /* DigiTinderManagedObject.swift */,
 			);
-			path = Commons;
+			path = Datastore;
 			sourceTree = "<group>";
 		};
-		32F31BDB24A8FF6F00E07AAF /* Cards */ = {
+		32F31BF724A9128600E07AAF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32F31BDC24A8FF6F00E07AAF /* Presenter */,
-				32F31BDE24A8FF6F00E07AAF /* WireFrame */,
-				32F31BE024A8FF6F00E07AAF /* View */,
-				32F31BE324A8FF7000E07AAF /* DataHandler */,
-				32F31BE824A8FF7000E07AAF /* Protocols */,
-				32F31BEA24A8FF7000E07AAF /* Interactor */,
+				32437FC424BB0ED200582D96 /* Interactor */,
+				32437FC624BB0ED200582D96 /* Router */,
+				32437FCA24BB0ED200582D96 /* SubViews */,
 			);
-			path = Cards;
-			sourceTree = "<group>";
-		};
-		32F31BDC24A8FF6F00E07AAF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BDD24A8FF6F00E07AAF /* PostListPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		32F31BDE24A8FF6F00E07AAF /* WireFrame */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BDF24A8FF6F00E07AAF /* PostListWireFrame.swift */,
-			);
-			path = WireFrame;
-			sourceTree = "<group>";
-		};
-		32F31BE024A8FF6F00E07AAF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BE124A8FF6F00E07AAF /* PostListView.swift */,
-				32F31BE224A8FF6F00E07AAF /* PostTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		32F31BE324A8FF7000E07AAF /* DataHandler */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BE424A8FF7000E07AAF /* Local */,
-				32F31BE624A8FF7000E07AAF /* Remote */,
-			);
-			path = DataHandler;
-			sourceTree = "<group>";
-		};
-		32F31BE424A8FF7000E07AAF /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BE524A8FF7000E07AAF /* PostListLocalDataManager.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		32F31BE624A8FF7000E07AAF /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BE724A8FF7000E07AAF /* PostListRemoteDataManager.swift */,
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
-		32F31BE824A8FF7000E07AAF /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BE924A8FF7000E07AAF /* PostListProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		32F31BEA24A8FF7000E07AAF /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				32F31BEB24A8FF7000E07AAF /* PostListInteractor.swift */,
-			);
-			path = Interactor;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7105D3194EE8FD89D596C4A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0FF964179EA1880FE82B6F33 /* Pods-DigiTinder.debug.xcconfig */,
-				D3907C83D62FE64EEC1E23E0 /* Pods-DigiTinder.release.xcconfig */,
-				246252F69B7CA24D902CB221 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */,
-				BAD1FACE5CF4BABFD4F49CBB /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */,
-				C24CC2ECA059FEDD3CA3F3F4 /* Pods-DigiTinderTests.debug.xcconfig */,
-				1FC9E0447DFFFAB03DD7CF9B /* Pods-DigiTinderTests.release.xcconfig */,
+				AF04DC50A6A716EA289CBA40 /* Pods-DigiTinder.debug.xcconfig */,
+				8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */,
+				D2F141836F7BEEB688E04162 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */,
+				B2E6B7DB6674C97A52A9CABA /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */,
+				F492CEC97837D7A55423D114 /* Pods-DigiTinderTests.debug.xcconfig */,
+				A68245652CED81BABE5A94EB /* Pods-DigiTinderTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -297,9 +301,9 @@
 		A8B4A562E9F0465DBB583EF2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				70711B2D8A4EFE67566A2830 /* Pods_DigiTinder.framework */,
-				3C49A8308DA0693AE385B277 /* Pods_DigiTinder_DigiTinderUITests.framework */,
-				DDB98A85684EF99A8E89C7FE /* Pods_DigiTinderTests.framework */,
+				99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */,
+				BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */,
+				6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,11 +315,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F31B8E24A8EE4000E07AAF /* Build configuration list for PBXNativeTarget "DigiTinder" */;
 			buildPhases = (
-				8DD417314B8B5B569B2B06F6 /* [CP] Check Pods Manifest.lock */,
+				F7EF5E1432EE842DE67D2517 /* [CP] Check Pods Manifest.lock */,
 				32F31B5D24A8EE3D00E07AAF /* Sources */,
 				32F31B5E24A8EE3D00E07AAF /* Frameworks */,
 				32F31B5F24A8EE3D00E07AAF /* Resources */,
-				42864D9D280E0BAA41ADA533 /* [CP] Embed Pods Frameworks */,
+				E2BA7E82B00837E44E1EFA07 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,7 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F31B9124A8EE4000E07AAF /* Build configuration list for PBXNativeTarget "DigiTinderTests" */;
 			buildPhases = (
-				817AA06A49536511D7786D45 /* [CP] Check Pods Manifest.lock */,
+				AA45F2D34C493A5B348F46C7 /* [CP] Check Pods Manifest.lock */,
 				32F31B7624A8EE4000E07AAF /* Sources */,
 				32F31B7724A8EE4000E07AAF /* Frameworks */,
 				32F31B7824A8EE4000E07AAF /* Resources */,
@@ -349,11 +353,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F31B9424A8EE4000E07AAF /* Build configuration list for PBXNativeTarget "DigiTinderUITests" */;
 			buildPhases = (
-				28FCE5EE970C0377FC343CC4 /* [CP] Check Pods Manifest.lock */,
+				798B6385498A4878EBFDFA74 /* [CP] Check Pods Manifest.lock */,
 				32F31B8124A8EE4000E07AAF /* Sources */,
 				32F31B8224A8EE4000E07AAF /* Frameworks */,
 				32F31B8324A8EE4000E07AAF /* Resources */,
-				B3EA33C4BB41F2AE33BDCC49 /* [CP] Embed Pods Frameworks */,
+				785F8682E14FCA26440BCF8B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -414,9 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32F31B7424A8EE4000E07AAF /* LaunchScreen.storyboard in Resources */,
+				3280A65624BA3679005E74CE /* sampleresponse.json in Resources */,
 				32F31B7124A8EE4000E07AAF /* Assets.xcassets in Resources */,
 				32F31BCC24A8F43400E07AAF /* README.md in Resources */,
-				32F31B6C24A8EE3D00E07AAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +441,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28FCE5EE970C0377FC343CC4 /* [CP] Check Pods Manifest.lock */ = {
+		785F8682E14FCA26440BCF8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		798B6385498A4878EBFDFA74 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,24 +480,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		42864D9D280E0BAA41ADA533 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder/Pods-DigiTinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder/Pods-DigiTinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigiTinder/Pods-DigiTinder-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		817AA06A49536511D7786D45 /* [CP] Check Pods Manifest.lock */ = {
+		AA45F2D34C493A5B348F46C7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -498,7 +502,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8DD417314B8B5B569B2B06F6 /* [CP] Check Pods Manifest.lock */ = {
+		E2BA7E82B00837E44E1EFA07 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder/Pods-DigiTinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder/Pods-DigiTinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigiTinder/Pods-DigiTinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7EF5E1432EE842DE67D2517 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -520,23 +541,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3EA33C4BB41F2AE33BDCC49 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -544,24 +548,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32F31BF224A8FF7000E07AAF /* PostListProtocols.swift in Sources */,
+				32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */,
+				32437FDE24BB15D300582D96 /* DTBtnMacroClass.swift in Sources */,
 				32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */,
 				32F31B6924A8EE3D00E07AAF /* ViewController.swift in Sources */,
-				32F31BD624A8F75B00E07AAF /* DigiTinderModel.swift in Sources */,
-				32F31BD824A8F75B00E07AAF /* DigiTinder.swift in Sources */,
+				3299EBDB24BA142100245711 /* DTNetworkManager.swift in Sources */,
+				3280A65C24BA39EA005E74CE /* DTHTTP.swift in Sources */,
+				32F31BD624A8F75B00E07AAF /* TinderUser.swift in Sources */,
+				3299EBE524BA16A000245711 /* DTResourceCaching.swift in Sources */,
+				32F31BD824A8F75B00E07AAF /* DigiTinderManagedObject.swift in Sources */,
 				32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */,
-				32F31BF324A8FF7000E07AAF /* PostListInteractor.swift in Sources */,
-				32F31BEE24A8FF7000E07AAF /* PostListView.swift in Sources */,
+				32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */,
+				32437FE024BB15D300582D96 /* DTImageMacroClass.swift in Sources */,
+				3280A65D24BA39EA005E74CE /* DTEncoding.swift in Sources */,
+				32437FE624BB186900582D96 /* DigiTinderBtn.swift in Sources */,
 				32F31B6F24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld in Sources */,
-				32F31BEF24A8FF7000E07AAF /* PostTableViewCell.swift in Sources */,
-				32F31BD524A8F75B00E07AAF /* Post+CoreDataProperties.swift in Sources */,
-				32F31BD924A8F75B00E07AAF /* Endpoints.swift in Sources */,
+				32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */,
+				32437FDF24BB15D300582D96 /* DTLabelMacroClass.swift in Sources */,
 				32F31BDA24A8F75B00E07AAF /* PersistenceError.swift in Sources */,
-				32F31BEC24A8FF7000E07AAF /* PostListPresenter.swift in Sources */,
-				32F31BED24A8FF7000E07AAF /* PostListWireFrame.swift in Sources */,
-				32F31BF124A8FF7000E07AAF /* PostListRemoteDataManager.swift in Sources */,
+				32437FE224BB15DA00582D96 /* DigiTinderInteractor.swift in Sources */,
+				3280A65B24BA39EA005E74CE /* DTRouter.swift in Sources */,
+				32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */,
 				32F31B6724A8EE3D00E07AAF /* SceneDelegate.swift in Sources */,
-				32F31BF024A8FF7000E07AAF /* PostListLocalDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,14 +605,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		32F31B6A24A8EE3D00E07AAF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				32F31B6B24A8EE3D00E07AAF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -732,7 +732,7 @@
 		};
 		32F31B8F24A8EE4000E07AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FF964179EA1880FE82B6F33 /* Pods-DigiTinder.debug.xcconfig */;
+			baseConfigurationReference = AF04DC50A6A716EA289CBA40 /* Pods-DigiTinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -750,7 +750,7 @@
 		};
 		32F31B9024A8EE4000E07AAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3907C83D62FE64EEC1E23E0 /* Pods-DigiTinder.release.xcconfig */;
+			baseConfigurationReference = 8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -768,7 +768,7 @@
 		};
 		32F31B9224A8EE4000E07AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C24CC2ECA059FEDD3CA3F3F4 /* Pods-DigiTinderTests.debug.xcconfig */;
+			baseConfigurationReference = F492CEC97837D7A55423D114 /* Pods-DigiTinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -790,7 +790,7 @@
 		};
 		32F31B9324A8EE4000E07AAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FC9E0447DFFFAB03DD7CF9B /* Pods-DigiTinderTests.release.xcconfig */;
+			baseConfigurationReference = A68245652CED81BABE5A94EB /* Pods-DigiTinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -812,7 +812,7 @@
 		};
 		32F31B9524A8EE4000E07AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 246252F69B7CA24D902CB221 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */;
+			baseConfigurationReference = D2F141836F7BEEB688E04162 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -832,7 +832,7 @@
 		};
 		32F31B9624A8EE4000E07AAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAD1FACE5CF4BABFD4F49CBB /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */;
+			baseConfigurationReference = B2E6B7DB6674C97A52A9CABA /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

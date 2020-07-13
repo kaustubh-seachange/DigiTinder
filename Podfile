@@ -6,10 +6,10 @@ target 'DigiTinder' do
   use_frameworks!
 
   # Pods for DigiTinder
-  pod 'Alamofire', '~> 4.7.3'
-  pod 'AlamofireObjectMapper', '~> 5.2'
-  pod 'AlamofireImage', '~> 3.3'
-  pod 'PKHUD', '~> 5.0'
+  #pod 'AlamofireImage', '~> 3.3'
+  #pod 'PKHUD', '~> 5.0'
+  #pod 'TinderSwipeView'
+  pod 'CryptoSwift', '~> 1.0'
 
   target 'DigiTinderTests' do
     inherit! :search_paths

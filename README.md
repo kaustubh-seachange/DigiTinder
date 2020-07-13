@@ -3,7 +3,7 @@
 This repository contains a detailed test iOS App uses VIPER design pattern and certain third party libraries to achieve and build the features outlined in test project using third-party libraries/frameworks like Alamofire, AlamofireImage, PKHUD, CoreData etc.
 
 
-## Read the below listed article. It describe the VIPER concepts and the Project structure.
+## Read the below listed article.
 [Building Test-Driven iOS Apps using VIPER Design Pattern](https://www.raywenderlich.com/8440907-getting-started-with-the-viper-architecture-pattern)
 
 

@@ -1,34 +1,16 @@
 PODS:
-  - Alamofire (4.7.3)
-  - AlamofireImage (3.4.1):
-    - Alamofire (~> 4.7)
-  - AlamofireObjectMapper (5.2.1):
-    - Alamofire (~> 4.7)
-    - ObjectMapper (~> 3.4)
-  - ObjectMapper (3.5.3)
-  - PKHUD (5.3.0)
+  - CryptoSwift (1.3.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.7.3)
-  - AlamofireImage (~> 3.3)
-  - AlamofireObjectMapper (~> 5.2)
-  - PKHUD (~> 5.0)
+  - CryptoSwift (~> 1.0)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - AlamofireImage
-    - AlamofireObjectMapper
-    - ObjectMapper
-    - PKHUD
+    - CryptoSwift
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
-  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
-  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
 
-PODFILE CHECKSUM: 49d43debb0a3da7d49555c38fb29f68557a5abeb
+PODFILE CHECKSUM: 2a633578ec3325cd3a3c7c5e36fab743bf0d0c6c
 
 COCOAPODS: 1.9.3
