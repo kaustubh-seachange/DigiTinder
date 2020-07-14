@@ -75,8 +75,8 @@ extension CoreDataStore {
     func favouriteProfiles() -> [Any] {
         let managedObjectContext = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<TinderUser>(entityName: "TinderUser")
-        let sortDescriptor1 = NSSortDescriptor(key: "ssn", ascending: true)
-        let sortDescriptor2 = NSSortDescriptor(key: "username", ascending: true)
+        let sortDescriptor1 = NSSortDescriptor(key: "email", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "phone", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
         do {
             let managedObjects = try managedObjectContext.fetch(fetchRequest)
@@ -141,6 +141,25 @@ extension CoreDataStore {
 }
 
 extension CoreDataStore {
+    func findExistingUser(user: TinderUserResponseModel) -> Bool {
+        let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
+        fetchRequest.predicate = NSPredicate(format: "email == %@ && phone == %@", user.email, user.phone)
+        do {
+            let objects = try context.fetch(fetchRequest) as? [NSManagedObject]
+            if objects!.count > 0 {
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        catch {
+            print("error executing fetch request: \(error)")
+            return false
+        }
+    }
+    
     func createTinderEntity(user: TinderUserResponseModel) -> NSManagedObject? {
         let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
         if let tinderUserEntity = NSEntityDescription.insertNewObject(forEntityName: "TinderUser", into: context) as? TinderUser {
@@ -191,6 +210,22 @@ extension CoreDataStore {
             } catch let error {
                 print("error_delete_ops: \(error.localizedDescription)")
             }
+        }
+    }
+    
+    func removeTinderUser(user: TinderUserResponseModel) -> Bool {
+        let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
+        fetchRequest.predicate = NSPredicate(format: "email == %@ && phone == %@", user.email, user.phone)
+        do {
+            let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
+            _ = objects.map{$0.map{context.delete($0)}}
+            
+            CoreDataStore.sharedInstance.saveContext()
+            return true
+        } catch let error {
+            print("error while delete: \(error.localizedDescription)")
+            return false
         }
     }
 }

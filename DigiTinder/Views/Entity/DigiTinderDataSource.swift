@@ -9,11 +9,14 @@
 import UIKit
 
 protocol DigiTinderDataSource {
+    func markProfile(asFavourite: Bool, using profiledData: DigiTinderSwipeModel)
     func numberOfCardsToShow() -> Int
     func card(at index: Int) -> DigiTinderView
     func emptyView() -> UIView?
 }
 
 protocol DigiTinderViewDelegate {
-    func swipeDidEnd(on view: DigiTinderView)
+    func swipeDidEnd(on view: DigiTinderView,
+                     isFavourite: Bool,
+                     profiledData: DigiTinderSwipeModel)
 }

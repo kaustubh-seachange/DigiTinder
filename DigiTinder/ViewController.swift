@@ -9,8 +9,10 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, NSFetchedResultsControllerDelegate  {
+class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
+    var previousProfileViewIndex: Int = 0
     var profileDataSource = [DigiTinderSwipeModel]()
+    var responseForTinderProfiles = [TinderUserResponseModel]() // This needs to be reset, once emptyView is called and n/w request is completed.
     var digiTinderPresenterView : DigiTinderPresenterView!
     
     private var networkManager: DTNetworkManager?
@@ -62,14 +64,26 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate  {
 // MARK: - Request/Response.
 extension ViewController {
     func getProfiles() {
-            self.networkManager!.getDigiTinderProfile(page: 1) { user, error in
+            self.networkManager!.getDigiTinderProfile(page: 1) { results, error in
                 if error == nil {
-                    let saveStatus = self.saveTinderUser(user: user!)
-                    if saveStatus {
-                        DispatchQueue.main.async {
-                            if (self.addProfileDataSource(user: user)) {
+                    var isProfileSavedToDataSource = false
+                    self.responseForTinderProfiles.removeAll() // Array Flushed.
+                    self.profileDataSource.removeAll()
+                    for result in results! as [Result] {
+                        isProfileSavedToDataSource = self.addProfileDataSource(user: result.user,
+                                                                               isFavourite: false)
+                    }
+                    DispatchQueue.main.async {
+                        if isProfileSavedToDataSource {
+                            if self.previousProfileViewIndex > 0 {
+                                self.digiTinderPresenterView.reloadData(at: self.previousProfileViewIndex)
+                            }
+                            else {
                                 self.digiTinderPresenterView.reloadData()
                             }
+                        }
+                        else {
+                            print("Do Nothing...")
                         }
                     }
                 }
@@ -88,12 +102,22 @@ extension ViewController {
             placeHolder: UIImage(named: "placeholder"))
     }
     
-    func addProfileDataSource(user: TinderUserResponseModel!) -> Bool {
-        let element = DigiTinderSwipeModel(bgColor: UIColor.lightGray,
+    func addProfileDataSource(user: TinderUserResponseModel!, isFavourite: Bool) -> Bool {
+        let element = DigiTinderSwipeModel(bgColor: .white,
                                            image: self.secureURLRequest(url: user.picture),
-                                           text: self.getProfileDisplayName(user: user),
-                                           subText: self.getProfileDetails(user: user))
+                                           name: self.getProfileDisplayName(user: user),
+                                           subText: self.getProfileDetails(user: user),
+                                           dob: user.dob,
+                                           email: user.email,
+                                           city: user.location.city,
+                                           state: user.location.state,
+                                           zip: user.location.zip,
+                                           phone: user.phone,
+                                           cell: user.cell,
+                                           privacyInfo: user.ssn,
+                                           isMarkedFavourite: isFavourite)
         profileDataSource.append(element)
+        responseForTinderProfiles.append(user)
         return true
     }
 }
@@ -102,30 +126,24 @@ extension ViewController {
 extension ViewController {
     func loadFavouriteProfiles() {
         let tinderFavourites = CoreDataStore.sharedInstance.favouriteProfiles()
-        var isAdded = false
+        print("::: Already Favourite Profile(s) \(tinderFavourites.count) Found :::")
+        var isFavouriteFound = false
         for tinderProfile in tinderFavourites {
-            isAdded = self.addProfileDataSource(user: tinderProfile as? TinderUserResponseModel)
+            isFavouriteFound = self.addProfileDataSource(user: tinderProfile as? TinderUserResponseModel, isFavourite: true)
         }
-        if isAdded {
+        if isFavouriteFound {
             digiTinderPresenterView.reloadData()
         }
-        self.getProfiles()
-
-//        let service = APIService()
-//        service.getDataWith { (result) in
-//            switch result {
-//            case .Success(let data):
-//                self.clearData()
-//                self.saveInCoreDataWith(array: data)
-//            case .Error(let message):
-//                DispatchQueue.main.async {
-//                    self.showAlertWith(title: "Error", message: message)
-//                }
-//            }
-//        }
+        else {
+            self.getProfiles()
+        }
     }
     
     private func saveTinderUser(user: TinderUserResponseModel) -> Bool {
+        let isUserExits = CoreDataStore.sharedInstance.findExistingUser(user: user)
+        if (isUserExits) {
+            return true
+        }
         _ = CoreDataStore.sharedInstance.createTinderEntity(user: user)
         do {
             try CoreDataStore.sharedInstance.persistentContainer.viewContext.save()
@@ -134,6 +152,10 @@ extension ViewController {
             print("error: \(error.localizedDescription)")
             return false
         }
+    }
+    
+    private func removeFavouriteUser(user: TinderUserResponseModel) -> Bool {
+        return CoreDataStore.sharedInstance.removeTinderUser(user: user)
     }
     
     private func restDataStore() {
@@ -171,7 +193,7 @@ extension ViewController {
     }
     
     func getProfileDetails(user: TinderUserResponseModel) -> String {
-        let profileDetails = "\(user.gender.capitalizingFirstLetter()), \(user.location.city)"
+        let profileDetails = "\(user.gender.capitalizingFirstLetter()), \(user.location.city.capitalizingFirstLetter())"
         return profileDetails
     }
     
@@ -200,6 +222,28 @@ extension ViewController : DigiTinderDataSource {
     }
     
     func emptyView() -> UIView? {
+        print("emptyView :: datasource.count: \(profileDataSource.count)")
+        self.previousProfileViewIndex = profileDataSource.count
+        // Invoke the API Request, Data will get Reloaded once the Profile is addedin datastore.
+        self.getProfiles()
+        
         return nil
     }
+
+    func markProfile(asFavourite: Bool, using profileData: DigiTinderSwipeModel) {
+        print("isFavourite: \(asFavourite), profileData: \(profileData.email)")
+        let favouriteUsers = responseForTinderProfiles.filter({return $0.email == profileData.email && $0.phone == profileData.phone && $0.ssn ==  profileData.privacyInfo})
+        
+        if favouriteUsers.count > 0 {
+            if asFavourite {
+                let saveStatus = self.saveTinderUser(user: favouriteUsers[0])
+                print("isData Saved Successfully: \(saveStatus)")
+            }
+            else {
+                let removeStatus = self.removeFavouriteUser(user: favouriteUsers[0])
+                print("removeStatus: \(removeStatus)")
+            }
+        }
+    }
+
 }

@@ -10,19 +10,20 @@ import Foundation
 import UIKit
 
 class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
-
-    //MARK: - Properties
-    var numberOfCardsToShow: Int = 0
-    var cardsVisibility: Int = 1
-    var cardViews : [DigiTinderView] = []
-    var remainingcards: Int = 0
     
-    let horizontalInset: CGFloat = 10.0
-    let verticalInset: CGFloat = 10.0
+    //MARK: - Properties
+    var cardsToDisplay: Int = 0
+    var cardsVisibleToUser: Int = 1
+    var cardViews : [DigiTinderView] = []
+    var cardsLeftToLoad: Int = 0
+    
+    let horizontalSpacing: CGFloat = 10.0
+    let verticalSpacing: CGFloat = 10.0
     
     var visibleCards: [DigiTinderView] {
         return subviews as? [DigiTinderView] ?? []
     }
+    
     var dataSource: DigiTinderDataSource? {
         didSet {
             reloadData()
@@ -45,16 +46,30 @@ class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
         guard let datasource = dataSource else { return }
         setNeedsLayout()
         layoutIfNeeded()
-        numberOfCardsToShow = datasource.numberOfCardsToShow()
-        remainingcards = numberOfCardsToShow
+        cardsToDisplay = datasource.numberOfCardsToShow()
+        cardsLeftToLoad = cardsToDisplay
         
-        for i in 0..<min(numberOfCardsToShow,cardsVisibility) {
+        for i in 0..<min(cardsToDisplay,cardsVisibleToUser) {
             addCardView(cardView: datasource.card(at: i), atIndex: i )
         }
     }
     
-    func userLikedCard() {
-        
+    func reloadData(at index: Int) {
+        removeAllCardViews()
+        guard let datasource = dataSource else { return }
+        setNeedsLayout()
+        layoutIfNeeded()
+        cardsToDisplay = datasource.numberOfCardsToShow()
+        cardsLeftToLoad = cardsToDisplay
+        print("minValue: \(min(cardsToDisplay, cardsVisibleToUser))")
+        for i in 0..<min(cardsToDisplay, cardsVisibleToUser) {
+            print("i: \(i), index: \(index)")
+            addCardView(cardView: datasource.card(at: i), atIndex: i)
+        }
+    }
+    
+    func userInteractedWithCard(isFavourite: Bool, profiledData: DigiTinderSwipeModel) {
+        // Mark this profile as Favourite and either load next card or invoke API to fetch next profile.
     }
     
     func loadNextCard() {
@@ -67,14 +82,13 @@ class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
         addCardFrame(index: index, cardView: cardView)
         cardViews.append(cardView)
         insertSubview(cardView, at: 0)
-        remainingcards -= 1
+        cardsLeftToLoad -= 1
     }
     
     func addCardFrame(index: Int, cardView: DigiTinderView) {
         var cardViewFrame = bounds
-        let horizontalInset = (CGFloat(index) * self.horizontalInset)
-        let verticalInset = CGFloat(index) * self.verticalInset
-        
+        let horizontalInset = (CGFloat(index) * self.horizontalSpacing)
+        let verticalInset = CGFloat(index) * self.verticalSpacing
         cardViewFrame.size.width -= 2 * horizontalInset
         cardViewFrame.origin.x += horizontalInset
         cardViewFrame.origin.y += verticalInset
@@ -89,12 +103,15 @@ class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
         cardViews = []
     }
     
-    func swipeDidEnd(on view: DigiTinderView) {
+    func swipeDidEnd(on view: DigiTinderView, isFavourite: Bool, profiledData: DigiTinderSwipeModel) {
+        dataSource?.markProfile(asFavourite: isFavourite, using: profiledData)
+
+        self.userInteractedWithCard(isFavourite: isFavourite, profiledData: profiledData)
         guard let datasource = dataSource else { return }
         view.removeFromSuperview()
 
-        if remainingcards > 0 {
-            let newIndex = datasource.numberOfCardsToShow() - remainingcards
+        if cardsLeftToLoad > 0 {
+            let newIndex = datasource.numberOfCardsToShow() - cardsLeftToLoad
             addCardView(cardView: datasource.card(at: newIndex), atIndex: 2)
             for (cardIndex, cardView) in visibleCards.reversed().enumerated() {
                 UIView.animate(withDuration: 0.2, animations: {
@@ -103,15 +120,18 @@ class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
                     self.layoutIfNeeded()
                 })
             }
-
-        }else {
-            for (cardIndex, cardView) in visibleCards.reversed().enumerated() {
-                UIView.animate(withDuration: 0.2, animations: {
-                    cardView.center = self.center
-                    self.addCardFrame(index: cardIndex, cardView: cardView)
-                    self.layoutIfNeeded()
-                })
-            }
+        }
+        else {
+            print("cardsleftToLoad: \(cardsLeftToLoad)")
+            dataSource?.emptyView()
+//            for (cardIndex, cardView) in visibleCards.reversed().enumerated() {
+//                UIView.animate(withDuration: 0.2, animations: {
+//                    cardView.center = self.center
+//                    self.addCardFrame(index: cardIndex, cardView: cardView)
+//                    self.layoutIfNeeded()
+//                })
+//            }
+            
         }
     }
 }

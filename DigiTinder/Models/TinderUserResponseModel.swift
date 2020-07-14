@@ -12,12 +12,12 @@ import CoreData
 // MARK: Automated Swift Struct Generated from https://app.quicktype.io
 // MARK: - ResponseData
 struct ResponseData: Codable {
-    let results: [Result]
+    let results: [Result] // MARK: Here Each Result is single user, thue single multiple results could be obtained.
 }
 
 // MARK: - Result
 struct Result: Codable {
-    let user: TinderUserResponseModel
+    let user: TinderUserResponseModel // MARK: This should be array to handle multiple users in the response, otherwise the results is handled as single user object,
     let seed, version: String
     enum CodingKeys: String, CodingKey {
         case user, seed, version

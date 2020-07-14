@@ -5,18 +5,31 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
          <BreakpointContent
-            uuid = "6553D239-762A-452C-8A61-ED1DF7BAFEA3"
+            uuid = "75D8CF81-8209-4ED4-A193-7D8DE71952F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Frameworks/TinderSwipeView/Classes/TinderCard.swift"
+            symbolName = ""
+            moduleName = "">
+            <Locations>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E82D249F-CD04-4961-80D2-7B53E4B6C61A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DigiTinder/Views/SubViews/DigiTinderFoundryView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270"
-            landmarkName = "beingDragged(_:)"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "addCardView(cardView:atIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -15,6 +15,7 @@
 		3209A8A124BCAF150043AF9C /* TinderUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */; };
 		3209A8A424BCAF3C0043AF9C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A8A324BCAF3C0043AF9C /* Extension.swift */; };
 		3209A8A724BCAFAA0043AF9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3209A8A524BCAFAA0043AF9C /* Main.storyboard */; };
+		32156F2924BDA326002594AF /* DigiTinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32156F2724BDA326002594AF /* DigiTinder.xcdatamodeld */; };
 		32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FBE24BB026F00582D96 /* DTSecureInfo.swift */; };
 		32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */; };
 		32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD724BB152400582D96 /* DigiTinderView.swift */; };
@@ -27,7 +28,6 @@
 		32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */; };
 		32F31B6724A8EE3D00E07AAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6624A8EE3D00E07AAF /* SceneDelegate.swift */; };
 		32F31B6924A8EE3D00E07AAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6824A8EE3D00E07AAF /* ViewController.swift */; };
-		32F31B6F24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */; };
 		32F31B7124A8EE4000E07AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32F31B7024A8EE4000E07AAF /* Assets.xcassets */; };
 		32F31B7424A8EE4000E07AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F31B7224A8EE4000E07AAF /* LaunchScreen.storyboard */; };
 		32F31B7F24A8EE4000E07AAF /* DigiTinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31B7E24A8EE4000E07AAF /* DigiTinderTests.swift */; };
@@ -64,6 +64,7 @@
 		3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TinderUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3209A8A324BCAF3C0043AF9C /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		3209A8A624BCAFAA0043AF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32156F2824BDA326002594AF /* DigiTinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DigiTinder.xcdatamodel; sourceTree = "<group>"; };
 		32437FBE24BB026F00582D96 /* DTSecureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTSecureInfo.swift; sourceTree = "<group>"; };
 		32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderFoundryView.swift; sourceTree = "<group>"; };
 		32437FD724BB152400582D96 /* DigiTinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderView.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		32F31B6424A8EE3D00E07AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32F31B6624A8EE3D00E07AAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		32F31B6824A8EE3D00E07AAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		32F31B6E24A8EE3D00E07AAF /* DigiTinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DigiTinder.xcdatamodel; sourceTree = "<group>"; };
 		32F31B7024A8EE4000E07AAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32F31B7324A8EE4000E07AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32F31B7524A8EE4000E07AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -265,10 +265,10 @@
 		32F31BD224A8F75B00E07AAF /* Datastore */ = {
 			isa = PBXGroup;
 			children = (
+				32156F2724BDA326002594AF /* DigiTinder.xcdatamodeld */,
+				32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */,
 				3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */,
 				3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */,
-				32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */,
-				32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */,
 			);
 			path = Datastore;
 			sourceTree = "<group>";
@@ -556,7 +556,7 @@
 				32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */,
 				32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */,
 				3280A65D24BA39EA005E74CE /* DTEncoding.swift in Sources */,
-				32F31B6F24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld in Sources */,
+				32156F2924BDA326002594AF /* DigiTinder.xcdatamodeld in Sources */,
 				32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */,
 				3209A89D24BCAEB80043AF9C /* TinderUserResponseModel.swift in Sources */,
 				3209A89A24BCAE7F0043AF9C /* DigiTinderSwipeModel.swift in Sources */,
@@ -896,12 +896,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		32F31B6D24A8EE3D00E07AAF /* DigiTinder.xcdatamodeld */ = {
+		32156F2724BDA326002594AF /* DigiTinder.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				32F31B6E24A8EE3D00E07AAF /* DigiTinder.xcdatamodel */,
+				32156F2824BDA326002594AF /* DigiTinder.xcdatamodel */,
 			);
-			currentVersion = 32F31B6E24A8EE3D00E07AAF /* DigiTinder.xcdatamodel */;
+			currentVersion = 32156F2824BDA326002594AF /* DigiTinder.xcdatamodel */;
 			path = DigiTinder.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

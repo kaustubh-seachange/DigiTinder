@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CommonCrypto
 
 // MARK: - Data Security
 // https://www.raywenderlich.com/129-basic-ios-security-keychain-and-hashing

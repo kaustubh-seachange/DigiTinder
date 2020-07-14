@@ -11,12 +11,36 @@ import UIKit
 struct DigiTinderSwipeModel {
     var image : String
     var bgColor: UIColor
-    var text : String
+    
+    var name : String
     var subText: String
-    init(bgColor: UIColor, image: String, text: String, subText: String) {
+    
+    var dob: String
+    var email: String
+
+    var city: String
+    var state: String
+    var zip: String
+    
+    var phone: String
+    var cell: String
+    var privacyInfo: String
+    var isMarkedFavourite: Bool
+    
+    init(bgColor: UIColor, image: String, name: String, subText: String, dob: String, email: String, city: String, state: String, zip: String, phone: String, cell: String, privacyInfo: String, isMarkedFavourite: Bool) {
         self.bgColor = bgColor
         self.image = image
-        self.text = text
+        self.name = name
         self.subText = subText
+        self.dob = dob
+        self.email = email
+        self.city = city
+        self.state = state
+        self.zip = zip
+        self.phone = phone
+        self.cell = cell
+        self.privacyInfo = privacyInfo
+        self.isMarkedFavourite = isMarkedFavourite
     }
+
 }

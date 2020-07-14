@@ -36,7 +36,7 @@ class DTNetworkManager {
     static let environment : DTNetworkEnv = .devlopment
     let router = DTRouter<DTEndPointAPI>()
     //func getDataWith(completion: @escaping (Result<[[String: AnyObject]]>) -> Void)
-    func getDigiTinderProfile(page: Int, completion: @escaping (_ user: TinderUserResponseModel?,_ error: String?)->()){
+    func getDigiTinderProfile(page: Int, completion: @escaping (_ results: [Result]?,_ error: String?)->()){
         router.request(.getDigiTinderProfile) { data, response, error in
             if error != nil {
                 completion(nil, DTNetworkResponse.requestfailed.rawValue)
@@ -56,7 +56,7 @@ class DTNetworkManager {
                         decoder.keyDecodingStrategy = .convertFromSnakeCase
                         let response = try decoder.decode(ResponseData.self, from: responseData)
                         if response.results.count > 0  {
-                            completion(response.results[0].user, nil)
+                            completion(response.results, nil)
                         } else  {
                             completion(nil, DTNetworkResponse.requestEmptyData.rawValue)
                         }
