@@ -16,8 +16,8 @@ open DigiTinder.xcworkspace
 ```
 
 ### Third-Party tools
-Project uses thirdparty tools/dependecies which can be installed using 
-```pod install``` commaned by navigating to the project directory.
+Project uses thirdparty tools/dependencies which can be installed using 
+```pod install``` command by navigating to the project directory.
 
     CryptoSwift https://cryptoswift.io/
     

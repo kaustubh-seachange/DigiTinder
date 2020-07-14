@@ -19,4 +19,5 @@ protocol DigiTinderViewDelegate {
     func swipeDidEnd(on view: DigiTinderView,
                      isFavourite: Bool,
                      profiledData: DigiTinderSwipeModel)
+    func userTapped(profile asFavourite: Bool, for model: DigiTinderSwipeModel)
 }

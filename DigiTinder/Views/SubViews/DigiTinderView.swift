@@ -43,10 +43,12 @@ class DigiTinderView : UIView {
             subLabel.text = dataSource?.subText
             nameButton.isSelected = true
             if dataSource!.isMarkedFavourite {
-                favouriteButton.setImage(UIImage(named: "like")?.withRenderingMode(.alwaysTemplate), for: .normal)
+                favouriteButton.isSelected = true
             }
             guard let image = dataSource?.image else { return }
-            imageView.load(url: image) 
+            imageView.load(url: image)
+            //imageView.resourceCachingFrom(dataSource!.image,placeHolder:UIImage(named: "\(dataSource?.name)\(dataSource?.phone)")
+
         }
     }
     
@@ -59,6 +61,7 @@ class DigiTinderView : UIView {
         configureLabelView()
         configureSubLabelView()
         configureImageView()
+        configureFavouriteButton()
         configureButtons()
         addPanGestureOnCards()
         configureTapGesture()
@@ -178,6 +181,22 @@ class DigiTinderView : UIView {
         subLabel.rightAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
     }
     
+    func configureFavouriteButton() {
+        // MARK: Favourite Button.
+        topView.addSubview(favouriteButton)
+        favouriteButton.translatesAutoresizingMaskIntoConstraints = false
+        let favouriteimage = UIImage(named: "notliked")?.withRenderingMode(.alwaysTemplate)
+        favouriteButton.setImage(favouriteimage, for: .normal)
+        let selfavouriteimage = UIImage(named: "like")?.withRenderingMode(.alwaysTemplate)
+        favouriteButton.setImage(selfavouriteimage, for: .selected)
+        favouriteButton.tag = 10
+        favouriteButton.addTarget(self, action: #selector(markProfileFavouriteAction), for: .touchUpInside)
+        favouriteButton.leftAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -50).isActive = true
+        favouriteButton.topAnchor.constraint(equalTo: topView.topAnchor, constant: -10).isActive = true
+        favouriteButton.widthAnchor.constraint(equalToConstant: 64).isActive = true
+        favouriteButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
+    }
+    
     func configureButtons() {
         // MARK: Setting the Centrally aligned button and then layout left/right Button, assumed location as central button, while rightSide Buttons(call, privacy) and leftSide Buttons(userdetails, otherInfo)
         
@@ -251,18 +270,6 @@ class DigiTinderView : UIView {
         privacyButton.centerYAnchor.constraint(equalTo: cellButton.centerYAnchor).isActive = true
         privacyButton.widthAnchor.constraint(equalToConstant: 64).isActive = true
         privacyButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        
-         // MARK: Favourite Button.
-        topView.addSubview(favouriteButton)
-        favouriteButton.translatesAutoresizingMaskIntoConstraints = false
-        let favouriteimage = UIImage(named: "notliked")?.withRenderingMode(.alwaysTemplate)
-        favouriteButton.setImage(favouriteimage, for: .normal)
-        favouriteButton.tag = 10
-        favouriteButton.addTarget(self, action: #selector(markProfileFavouriteAction), for: .touchUpInside)
-        favouriteButton.leftAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -50).isActive = true
-        favouriteButton.topAnchor.constraint(equalTo: topView.topAnchor, constant: -10).isActive = true
-        favouriteButton.widthAnchor.constraint(equalToConstant: 64).isActive = true
-        favouriteButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
     }
 
     func configureTapGesture() {
@@ -325,6 +332,9 @@ class DigiTinderView : UIView {
     // MARK: - Button Action(s).
     @objc func markProfileFavouriteAction(sender: UIButton) {
         print("sender.tag: \(sender.tag)")
+        let btn = sender as UIButton
+        favouriteButton.isSelected = btn.isSelected
+        self.delegate?.userTapped(profile: btn.isSelected, for: dataSource!)
     }
     
     @objc func buttonsAction(sender: UIButton) {

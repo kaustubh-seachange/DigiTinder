@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
-    
+class DigiTinderPresenterView: UIView {
     //MARK: - Properties
     var cardsToDisplay: Int = 0
     var cardsVisibleToUser: Int = 1
@@ -103,6 +102,10 @@ class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
         cardViews = []
     }
     
+}
+
+extension DigiTinderPresenterView : DigiTinderViewDelegate {
+    
     func swipeDidEnd(on view: DigiTinderView, isFavourite: Bool, profiledData: DigiTinderSwipeModel) {
         dataSource?.markProfile(asFavourite: isFavourite, using: profiledData)
 
@@ -133,5 +136,10 @@ class DigiTinderPresenterView: UIView, DigiTinderViewDelegate {
 //            }
             
         }
+    }
+    
+    // MARK:
+    func userTapped(profile asFavourite: Bool, for model: DigiTinderSwipeModel) {
+        print("asFavourite: \(asFavourite), model: \(model.email), \(model.phone)")
     }
 }
