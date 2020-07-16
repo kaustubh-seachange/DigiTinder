@@ -19,6 +19,11 @@ extension UIImageView {
             self.image = resourceCached
             return
         }
+        let activityIndicator = UIActivityIndicatorView.init(style: .medium)
+        activityIndicator.color = .green
+        activityIndicator.startAnimating()
+        self.addSubview(activityIndicator)
+        
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error != nil {
@@ -29,6 +34,7 @@ extension UIImageView {
                     return
                 }
                 DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
                     if let data = data {
                         if let downloadedImage = UIImage(data: data) {
                             resourceCaching.setObject(downloadedImage, forKey: NSString(string: urlString))

@@ -64,36 +64,49 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 // MARK: - Request/Response.
 extension ViewController {
     func getProfiles() {
-            self.networkManager!.getDigiTinderProfile(page: 1) { results, error in
-                if error == nil {
-                    var isProfileSavedToDataSource = false
-                    self.responseForTinderProfiles.removeAll() // Array Flushed.
-                    self.profileDataSource.removeAll()
-                    for result in results! as [Result] {
-                        isProfileSavedToDataSource = self.addProfileDataSource(user: result.user,
-                                                                               isFavourite: false)
-                    }
-                    DispatchQueue.main.async {
-                        if isProfileSavedToDataSource {
-                            if self.previousProfileViewIndex > 0 {
-                                self.digiTinderPresenterView.reloadData(at: self.previousProfileViewIndex)
-                            }
-                            else {
-                                self.digiTinderPresenterView.reloadData()
-                            }
+        let activityIndicator = UIActivityIndicatorView.init(frame: CGRect(x: self.view.frame.width/2,
+                                                                           y: self.view.frame.height/2,
+                                                                           width: 24.0,
+                                                                           height: 24.0))
+        activityIndicator.color = .darkGray
+        activityIndicator.style = .large
+        activityIndicator.backgroundColor = UIColor.clear
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
+        self.networkManager!.getDigiTinderProfile(page: 1) { results, error in
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+            }
+            
+            if error == nil {
+                var isProfileSavedToDataSource = false
+                self.responseForTinderProfiles.removeAll() // Array Flushed.
+                self.profileDataSource.removeAll()
+                for result in results! as [Result] {
+                    isProfileSavedToDataSource = self.addProfileDataSource(user: result.user,
+                                                                           isFavourite: false)
+                }
+                DispatchQueue.main.async {
+                    if isProfileSavedToDataSource {
+                        if self.previousProfileViewIndex > 0 {
+                            self.digiTinderPresenterView.reloadData(at: self.previousProfileViewIndex)
                         }
                         else {
-                            print("Do Nothing...")
+                            self.digiTinderPresenterView.reloadData()
                         }
                     }
-                }
-                else {
-                    print("error: \(String(describing: error))")
-                    DispatchQueue.main.async {
-                        self.showAlertWith(title: "Error", message: error!)
+                    else {
+                        print("Do Nothing...")
                     }
                 }
             }
+            else {
+                print("error: \(String(describing: error))")
+                DispatchQueue.main.async {
+                    self.showAlertWith(title: "Error", message: error!)
+                }
+            }
+        }
     }
     
     func fetchProfileImage(photoUrl: String)  {

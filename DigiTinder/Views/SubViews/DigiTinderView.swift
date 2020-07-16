@@ -19,8 +19,9 @@ class DigiTinderView : UIView {
     var bottomView: UIView!
     
     var viewForImage: UIView!
+    var linViewForImage: UIView!
     var imageView: UIImageView!
-  
+    
     var nameLabel = UILabel()
     var subLabel = UILabel()
     
@@ -45,10 +46,10 @@ class DigiTinderView : UIView {
             if dataSource!.isMarkedFavourite {
                 favouriteButton.isSelected = true
             }
-            guard let image = dataSource?.image else { return }
-            imageView.load(url: image)
-            //imageView.resourceCachingFrom(dataSource!.image,placeHolder:UIImage(named: "\(dataSource?.name)\(dataSource?.phone)")
-
+            //guard let image = dataSource?.image else { return }
+            //imageView.load(url: image)
+            imageView.resourceCachingFrom(dataSource!.image,
+                                          placeHolder:UIImage(named: "placeholder"))
         }
     }
     
@@ -134,6 +135,17 @@ class DigiTinderView : UIView {
         viewForImage.widthAnchor.constraint(equalToConstant: 160).isActive = true
         viewForImage.heightAnchor.constraint(equalToConstant: 160).isActive = true
 
+        linViewForImage = UIView()
+        linViewForImage.backgroundColor = .white
+        linViewForImage.layer.borderColor = UIColor.lightGray.cgColor
+        linViewForImage.layer.borderWidth = 1.0
+        topView.addSubview(linViewForImage)
+        linViewForImage.translatesAutoresizingMaskIntoConstraints = false
+        linViewForImage.centerXAnchor.constraint(equalTo: viewForImage.centerXAnchor).isActive = true
+        linViewForImage.centerYAnchor.constraint(equalTo: viewForImage.centerYAnchor, constant:  40).isActive = true
+        linViewForImage.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        linViewForImage.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
         imageView = UIImageView()
         //imageView.frame = CGRect.init(x: 0, y: 0, width: 120, height: 120)
         imageView.contentMode = .scaleToFill
