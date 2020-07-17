@@ -26,7 +26,7 @@ class DTRouter<EndPoint: DTEndPointType>: DTNetworkRouter {
         let session = URLSession.shared
         do {
             let request = try self.buildRequest(from: route)
-            print("URL Request: \(String(describing: request.url))")
+            print("{\(#function):\(#line)} :) request.url: \(String(describing: request.url))")
             task = session.dataTask(with: request, completionHandler: { data, response, error in
                 completion(data, response, error)
             })

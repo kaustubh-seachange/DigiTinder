@@ -9,6 +9,20 @@
 import Foundation
 import CryptoSwift
 
+extension NSObject {
+    func loggerMin(_ message: String, function: String = #function, line: Int = #line) {
+        print("{\(function):\(line)} :) \(message)")
+    }
+    
+    func logger(_ message: String,
+                file: String = #file,
+                function: String = #function,
+                line: Int = #line,
+                column: Int = #column) {
+        print("{\(file)->\(function):\(line)[\(column)]} :) \(message)")
+    }
+}
+
 extension UIImageView {
     func load(url: String) {
         let requrl = URL(string: url)

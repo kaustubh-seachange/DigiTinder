@@ -60,9 +60,8 @@ class DigiTinderPresenterView: UIView {
         layoutIfNeeded()
         cardsToDisplay = datasource.numberOfCardsToShow()
         cardsLeftToLoad = cardsToDisplay
-        print("minValue: \(min(cardsToDisplay, cardsVisibleToUser))")
         for i in 0..<min(cardsToDisplay, cardsVisibleToUser) {
-            print("i: \(i), index: \(index)")
+            self.loggerMin("i: \(i), index: \(index)")
             addCardView(cardView: datasource.card(at: i), atIndex: i)
         }
     }
@@ -105,7 +104,6 @@ class DigiTinderPresenterView: UIView {
 }
 
 extension DigiTinderPresenterView : DigiTinderViewDelegate {
-    
     func swipeDidEnd(on view: DigiTinderView, isFavourite: Bool, profiledData: DigiTinderSwipeModel) {
         dataSource?.markProfile(asFavourite: isFavourite, using: profiledData)
 
@@ -125,21 +123,13 @@ extension DigiTinderPresenterView : DigiTinderViewDelegate {
             }
         }
         else {
-            print("cardsleftToLoad: \(cardsLeftToLoad)")
+            self.loggerMin("cardsleftToLoad: \(cardsLeftToLoad)")
             dataSource?.emptyView()
-//            for (cardIndex, cardView) in visibleCards.reversed().enumerated() {
-//                UIView.animate(withDuration: 0.2, animations: {
-//                    cardView.center = self.center
-//                    self.addCardFrame(index: cardIndex, cardView: cardView)
-//                    self.layoutIfNeeded()
-//                })
-//            }
-            
         }
     }
     
-    // MARK:
+    // MARK: userTapped to Check/Uncheck the Favourite Profile without using Gesture.
     func userTapped(profile asFavourite: Bool, for model: DigiTinderSwipeModel) {
-        print("asFavourite: \(asFavourite), model: \(model.email), \(model.phone)")
+        self.loggerMin("asFavourite: \(asFavourite), model: \(model.email), \(model.phone)")
     }
 }

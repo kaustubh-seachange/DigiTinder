@@ -66,7 +66,7 @@ extension CoreDataStore {
     func applicationDocumentsDirectory() {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "yo.BlogReaderApp" in the application's documents directory.
         if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
-            print(url.absoluteString)
+            self.loggerMin(url.absoluteString)
         }
     }
 }
@@ -83,7 +83,7 @@ extension CoreDataStore {
             let viewModelObjects = self.createDigiTinderViewModel(moArray: managedObjects)
             return viewModelObjects as! [Any]
         } catch let error {
-            print(error)
+            self.loggerMin(String(describing: error))
             return []
         }
     }
@@ -103,7 +103,7 @@ extension CoreDataStore {
                 array.append((aObj as TinderUserResponseModel?)!)
             }
             else {
-                print("skipped...")
+                self.loggerMin("skipped...")
             }
             
         }
@@ -155,7 +155,7 @@ extension CoreDataStore {
             }
         }
         catch {
-            print("error executing fetch request: \(error)")
+            self.loggerMin("error executing fetch request: \(error)")
             return false
         }
     }
@@ -208,7 +208,7 @@ extension CoreDataStore {
                 _ = objects.map{$0.map{context.delete($0)}}
                 CoreDataStore.sharedInstance.saveContext()
             } catch let error {
-                print("error_delete_ops: \(error.localizedDescription)")
+                self.loggerMin("error_delete_ops: \(error.localizedDescription)")
             }
         }
     }
@@ -224,7 +224,7 @@ extension CoreDataStore {
             CoreDataStore.sharedInstance.saveContext()
             return true
         } catch let error {
-            print("error while delete: \(error.localizedDescription)")
+            self.loggerMin("error while delete: \(error.localizedDescription)")
             return false
         }
     }

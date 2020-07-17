@@ -38,7 +38,6 @@ class DigiTinderView : UIView {
     
     var dataSource : DigiTinderSwipeModel? {
         didSet {
-            print("dataSource.name: \(String(describing: dataSource?.name))")
             topView.backgroundColor = dataSource?.bgColor
             nameLabel.text = dataSource?.name
             subLabel.text = dataSource?.subText
@@ -53,7 +52,7 @@ class DigiTinderView : UIView {
     }
     
     //MARK: - Init
-     override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: .zero)
         configureShadowView()
         configureTopView()
@@ -274,7 +273,6 @@ class DigiTinderView : UIView {
         privacyButton.setImage(privacyimage, for: .normal)
         let selprivacyimage = UIImage(named: "selprivacy")?.withRenderingMode(.alwaysTemplate)
         privacyButton.setImage(selprivacyimage, for: .selected)
-        //privacyButton.tintColor = UIColor.lightGray
         privacyButton.tag = 2
         privacyButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
         privacyButton.leftAnchor.constraint(equalTo: cellButton.rightAnchor, constant: -20).isActive = true
@@ -299,8 +297,6 @@ class DigiTinderView : UIView {
         let point = sender.translation(in: self)
         let centerOfParentContainer = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         card.center = CGPoint(x: centerOfParentContainer.x + point.x, y: centerOfParentContainer.y + point.y)
-        //let swapShift = ((UIScreen.main.bounds.width / 2) - card.center.x)
-        //print("adjust swapShift: \(swapShift); '+'=userDisliked ; '-'=userliked")
         divisor = ((UIScreen.main.bounds.width / 2) / 0.61)
        
         switch sender.state {
@@ -342,7 +338,7 @@ class DigiTinderView : UIView {
     
     // MARK: - Button Action(s).
     @objc func markProfileFavouriteAction(sender: UIButton) {
-        print("sender.tag: \(sender.tag)")
+        self.loggerMin("sender.tag: \(sender.tag)")
         let btn = sender as UIButton
         favouriteButton.isSelected = btn.isSelected
         self.delegate?.userTapped(profile: btn.isSelected, for: dataSource!)

@@ -15,7 +15,7 @@ enum DTNetworkResponse:String {
     case requestAuthError = "You need to be authenticated first."
     case requestBad = "Bad request"
     case requestOutdated = "The url you requested is outdated."
-    case requestfailed = "Network request failed."
+    case requestfailed = "The Internet connection appears to be offline."
     case requestDecodeFailed = "We could not decode the response."
 }
 
@@ -35,7 +35,6 @@ class DTNetworkManager {
     
     static let environment : DTNetworkEnv = .devlopment
     let router = DTRouter<DTEndPointAPI>()
-    //func getDataWith(completion: @escaping (Result<[[String: AnyObject]]>) -> Void)
     func getDigiTinderProfile(page: Int, completion: @escaping (_ results: [Result]?,_ error: String?)->()){
         router.request(.getDigiTinderProfile) { data, response, error in
             if error != nil {
@@ -61,11 +60,11 @@ class DTNetworkManager {
                             completion(nil, DTNetworkResponse.requestEmptyData.rawValue)
                         }
                     }catch {
-                        print(error)
+                        print("{\(#function):\(#line)} :) \(error.localizedDescription)")
                         completion(nil, DTNetworkResponse.requestDecodeFailed.rawValue)
                     }
                 case .failure(let networkFailureError):
-                    completion(nil, networkFailureError)
+                    completion(nil, DTNetworkResponse.requestfailed.rawValue)
                 }
             }
         }

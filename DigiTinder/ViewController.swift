@@ -101,12 +101,12 @@ extension ViewController {
                         }
                     }
                     else {
-                        print("Do Nothing...")
+                        self.loggerMin("Do Nothing...")
                     }
                 }
             }
             else {
-                print("error: \(String(describing: error))")
+                self.loggerMin(String(describing: error))
                 DispatchQueue.main.async {
                     self.commonUI.stopActivityIndicator()
                     //activityIndicator.stopAnimating()
@@ -140,7 +140,7 @@ extension ViewController {
 extension ViewController {
     func loadFavouriteProfiles() {
         let tinderFavourites = CoreDataStore.sharedInstance.favouriteProfiles()
-        print("::: \(tinderFavourites.count) Favourite Profile(s) Found :::")
+        self.loggerMin("Found \(tinderFavourites.count) Favourite Profile(s)")
         var isFavouriteFound = false
         for tinderProfile in tinderFavourites {
             isFavouriteFound = self.addProfileDataSource(user: tinderProfile as? TinderUserResponseModel, isFavourite: true)
@@ -163,7 +163,7 @@ extension ViewController {
             try CoreDataStore.sharedInstance.persistentContainer.viewContext.save()
             return true
         } catch let error {
-            print("error: \(error.localizedDescription)")
+            self.loggerMin("error: \(error.localizedDescription)")
             return false
         }
     }
@@ -239,23 +239,21 @@ extension ViewController : DigiTinderDataSource {
     }
     
     func emptyView() {
-        print("emptyView :: datasource.count: \(profileDataSource.count)")
-        self.previousProfileViewIndex = profileDataSource.count
+        self.loggerMin("datasource: \(self.profileDataSource.count)")
+        self.previousProfileViewIndex = self.profileDataSource.count
         self.getProfiles()
     }
 
     func markProfile(asFavourite: Bool, using profileData: DigiTinderSwipeModel) {
-        print("isFavourite: \(asFavourite), profileData: \(profileData.email)")
         let favouriteUsers = responseForTinderProfiles.filter({return $0.email == profileData.email && $0.phone == profileData.phone && $0.ssn ==  profileData.privacyInfo})
-        
         if favouriteUsers.count > 0 {
             if asFavourite {
                 let saveStatus = self.saveTinderUser(user: favouriteUsers[0])
-                print("isData Saved Successfully: \(saveStatus)")
+                self.loggerMin("save: \(saveStatus)")
             }
             else {
                 let removeStatus = self.removeFavouriteUser(user: favouriteUsers[0])
-                print("removeStatus: \(removeStatus)")
+                self.loggerMin("remove: \(removeStatus)")
             }
         }
     }
