@@ -47,9 +47,8 @@ class DigiTinderView : UIView {
                 favouriteButton.isSelected = true
             }
             //guard let image = dataSource?.image else { return }
-            //imageView.load(url: image)
-            imageView.resourceCachingFrom(dataSource!.image,
-                                          placeHolder:UIImage(named: "placeholder"))
+            imageView.resourceCached(from: dataSource!.image,
+                                     placeHolder:UIImage(named: "placeholder"))
         }
     }
     
@@ -139,6 +138,7 @@ class DigiTinderView : UIView {
         linViewForImage.backgroundColor = .white
         linViewForImage.layer.borderColor = UIColor.lightGray.cgColor
         linViewForImage.layer.borderWidth = 1.0
+        linViewForImage.clipsToBounds = true
         topView.addSubview(linViewForImage)
         linViewForImage.translatesAutoresizingMaskIntoConstraints = false
         linViewForImage.centerXAnchor.constraint(equalTo: viewForImage.centerXAnchor).isActive = true
@@ -147,13 +147,12 @@ class DigiTinderView : UIView {
         linViewForImage.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
         imageView = UIImageView()
-        //imageView.frame = CGRect.init(x: 0, y: 0, width: 120, height: 120)
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.borderWidth = 1.0
         imageView.layer.masksToBounds = true
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 75
         imageView.layer.borderColor = UIColor.lightGray.cgColor
-        imageView.clipsToBounds = true
         viewForImage.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: viewForImage.centerXAnchor).isActive = true
@@ -354,7 +353,7 @@ class DigiTinderView : UIView {
             case -2:
                 self.updateInfo(for: dataSource!.name, sublblAs: dataSource!.subText)
             case -1:
-                self.updateInfo(for: dataSource!.dob, sublblAs: dataSource!.email)
+                self.updateInfo(for: "\(dataSource!.dob)", sublblAs: dataSource!.email)
             case 1:
                 self.updateInfo(for: dataSource!.cell, sublblAs: dataSource!.phone)
             case 2:

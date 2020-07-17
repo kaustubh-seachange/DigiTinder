@@ -9,35 +9,38 @@
 import Foundation
 import UIKit
 
-let resourceCaching = NSCache<NSString, UIImage>()
+let resourceCache = NSCache<NSString, UIImage>()
+let commonUI = CommonUI()
 
 extension UIImageView {
     // MARK: - Check for genericType.
-    func resourceCachingFrom(_ urlString: String, placeHolder: UIImage?) {
+    func resourceCached(from stringUrl: String, placeHolder: UIImage?) {
         self.image = nil
-        if let resourceCached = resourceCaching.object(forKey: NSString(string: urlString)) {
+        if let resourceCached = resourceCache.object(forKey: NSString(string: stringUrl)) {
             self.image = resourceCached
             return
         }
-        let activityIndicator = UIActivityIndicatorView.init(style: .medium)
-        activityIndicator.color = .green
-        activityIndicator.startAnimating()
-        self.addSubview(activityIndicator)
         
-        if let url = URL(string: urlString) {
+        commonUI.createActivityIndicator(using: self,
+                                         aFrame: CGRect(x: self.frame.size.width/2,
+                                                        y: self.frame.size.height/2,
+                                                        width: 24.0,
+                                                        height: 24.0))
+        if let url = URL(string: stringUrl) {
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error != nil {
                     print("ERROR LOADING IMAGES FROM URL: \(String(describing: error))")
                     DispatchQueue.main.async {
+                        commonUI.stopActivityIndicator()
                         self.image = placeHolder
                     }
                     return
                 }
                 DispatchQueue.main.async {
-                    activityIndicator.stopAnimating()
+                    commonUI.stopActivityIndicator()
                     if let data = data {
                         if let downloadedImage = UIImage(data: data) {
-                            resourceCaching.setObject(downloadedImage, forKey: NSString(string: urlString))
+                            resourceCache.setObject(downloadedImage, forKey: NSString(string: stringUrl))
                             self.image = downloadedImage
                         }
                     }

@@ -14,8 +14,10 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     var profileDataSource = [DigiTinderSwipeModel]()
     var responseForTinderProfiles = [TinderUserResponseModel]() // This needs to be reset, once emptyView is called and n/w request is completed.
     var digiTinderPresenterView : DigiTinderPresenterView!
+    var commonUI: CommonUI!
     
     private var networkManager: DTNetworkManager?
+    
     
     lazy var fetchedResultController: NSFetchedResultsController<NSFetchRequestResult> = {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
@@ -29,6 +31,9 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     override func loadView() {
         view = UIView()
         view.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0)
+        
+        commonUI = CommonUI()
+        
         digiTinderPresenterView = DigiTinderPresenterView()
         view.addSubview(digiTinderPresenterView)
         configurePresenterContainer()
@@ -64,20 +69,18 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 // MARK: - Request/Response.
 extension ViewController {
     func getProfiles() {
-        let activityIndicator = UIActivityIndicatorView.init(frame: CGRect(x: self.view.frame.width/2,
-                                                                           y: self.view.frame.height/2,
-                                                                           width: 24.0,
-                                                                           height: 24.0))
-        activityIndicator.color = .darkGray
-        activityIndicator.style = .large
-        activityIndicator.backgroundColor = UIColor.clear
-        activityIndicator.startAnimating()
-        self.view.addSubview(activityIndicator)
+        let aFrame = CGRect(x: self.view.frame.width/2,
+                            y: self.view.frame.height/2,
+                            width: 24.0,
+                            height: 24.0)
+        self.commonUI.createActivityIndicator(using: self.view, aFrame: aFrame)
+//        let activityIndicator = UIActivityIndicatorView.init(frame: aFrame)
+//        activityIndicator.color = .darkGray
+//        activityIndicator.style = .large
+//        activityIndicator.backgroundColor = UIColor.clear
+//        activityIndicator.startAnimating()
+//        self.view.addSubview(activityIndicator)
         self.networkManager!.getDigiTinderProfile(page: 1) { results, error in
-            DispatchQueue.main.async {
-                activityIndicator.stopAnimating()
-            }
-            
             if error == nil {
                 var isProfileSavedToDataSource = false
                 self.responseForTinderProfiles.removeAll() // Array Flushed.
@@ -87,6 +90,8 @@ extension ViewController {
                                                                            isFavourite: false)
                 }
                 DispatchQueue.main.async {
+                    self.commonUI.stopActivityIndicator()
+                    //activityIndicator.stopAnimating()
                     if isProfileSavedToDataSource {
                         if self.previousProfileViewIndex > 0 {
                             self.digiTinderPresenterView.reloadData(at: self.previousProfileViewIndex)
@@ -103,16 +108,12 @@ extension ViewController {
             else {
                 print("error: \(String(describing: error))")
                 DispatchQueue.main.async {
+                    self.commonUI.stopActivityIndicator()
+                    //activityIndicator.stopAnimating()
                     self.showAlertWith(title: "Error", message: error!)
                 }
             }
         }
-    }
-    
-    func fetchProfileImage(photoUrl: String)  {
-        let secureRequest = self.secureURLRequest(url: photoUrl)
-        self.digiTinderPresenterView.visibleCards[0].imageView.resourceCachingFrom(secureRequest,
-            placeHolder: UIImage(named: "placeholder"))
     }
     
     func addProfileDataSource(user: TinderUserResponseModel!, isFavourite: Bool) -> Bool {
@@ -120,7 +121,7 @@ extension ViewController {
                                            image: self.secureURLRequest(url: user.picture),
                                            name: self.getProfileDisplayName(user: user),
                                            subText: self.getProfileDetails(user: user),
-                                           dob: user.dob,
+                                           dob: self.getTinderUserAge(dob: user.dob),
                                            email: user.email,
                                            city: user.location.city,
                                            state: user.location.state,
@@ -139,7 +140,7 @@ extension ViewController {
 extension ViewController {
     func loadFavouriteProfiles() {
         let tinderFavourites = CoreDataStore.sharedInstance.favouriteProfiles()
-        print("::: Already Favourite Profile(s) \(tinderFavourites.count) Found :::")
+        print("::: \(tinderFavourites.count) Favourite Profile(s) Found :::")
         var isFavouriteFound = false
         for tinderProfile in tinderFavourites {
             isFavouriteFound = self.addProfileDataSource(user: tinderProfile as? TinderUserResponseModel, isFavourite: true)
@@ -211,9 +212,12 @@ extension ViewController {
     }
     
     func getTinderUserAge(dob: String) -> Int {
-        let dateFormatter = ISO8601DateFormatter()
-        let date = dateFormatter.date(from:dob)!
-        return Calendar.current.dateComponents([.year], from: date, to: Date()).year!
+        let commonUtils = CommonUtility()
+        let age = commonUtils.calculateAge(dob: dob)
+        return age.year
+//        let dateFormatter = ISO8601DateFormatter()
+//        let date = dateFormatter.date(from:dob)!
+//        return Calendar.current.dateComponents([.year], from: date, to: Date()).year!
     }
 }
 
@@ -234,13 +238,10 @@ extension ViewController : DigiTinderDataSource {
         return card
     }
     
-    func emptyView() -> UIView? {
+    func emptyView() {
         print("emptyView :: datasource.count: \(profileDataSource.count)")
         self.previousProfileViewIndex = profileDataSource.count
-        // Invoke the API Request, Data will get Reloaded once the Profile is addedin datastore.
         self.getProfiles()
-        
-        return nil
     }
 
     func markProfile(asFavourite: Bool, using profileData: DigiTinderSwipeModel) {

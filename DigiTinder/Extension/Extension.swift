@@ -45,6 +45,20 @@ extension DateFormatter {
     }()
 }
 
+extension Date{
+     var daysInMonth:Int{
+        let calendar = Calendar.current
+        
+        let dateComponents = DateComponents(year: calendar.component(.year, from: self), month: calendar.component(.month, from: self))
+        let date = calendar.date(from: dateComponents)!
+        
+        let range = calendar.range(of: .day, in: .month, for: date)!
+        let numDays = range.count
+        
+        return numDays
+    }
+}
+
 public extension CodingUserInfoKey {
     // Helper property to retrieve the Core Data managed object context
     static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")

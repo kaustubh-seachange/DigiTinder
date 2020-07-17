@@ -12,7 +12,7 @@ protocol DigiTinderDataSource {
     func markProfile(asFavourite: Bool, using profiledData: DigiTinderSwipeModel)
     func numberOfCardsToShow() -> Int
     func card(at index: Int) -> DigiTinderView
-    func emptyView() -> UIView?
+    func emptyView()// -> UIView?
 }
 
 protocol DigiTinderViewDelegate {
