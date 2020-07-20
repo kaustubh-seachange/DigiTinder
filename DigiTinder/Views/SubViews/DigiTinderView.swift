@@ -338,7 +338,6 @@ class DigiTinderView : UIView {
     
     // MARK: - Button Action(s).
     @objc func markProfileFavouriteAction(sender: UIButton) {
-        self.loggerMin("sender.tag: \(sender.tag)")
         let btn = sender as UIButton
         favouriteButton.isSelected = btn.isSelected
         self.delegate?.userTapped(profile: btn.isSelected, for: dataSource!)

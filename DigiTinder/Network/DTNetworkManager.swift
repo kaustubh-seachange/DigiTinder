@@ -63,7 +63,7 @@ class DTNetworkManager {
                         print("{\(#function):\(#line)} :) \(error.localizedDescription)")
                         completion(nil, DTNetworkResponse.requestDecodeFailed.rawValue)
                     }
-                case .failure(let networkFailureError):
+                case .failure( _):
                     completion(nil, DTNetworkResponse.requestfailed.rawValue)
                 }
             }

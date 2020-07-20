@@ -49,9 +49,14 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
         self.networkManager = networkManager
 
         view.backgroundColor = .white
-        self.loadFavouriteProfiles()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.loadFavouriteProfiles()
+        
+        super.viewDidAppear(true)
+
+    }
     //MARK: - Configurations
     func configurePresenterContainer() {
         digiTinderPresenterView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
