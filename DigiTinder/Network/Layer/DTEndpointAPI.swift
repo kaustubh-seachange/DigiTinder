@@ -37,12 +37,14 @@ extension DTEndPointAPI : DTEndPointType {
         return url
     }
     
+    // https://randomuser.me/api/?results=50
+    
     var path: String {
         switch self {
         case .getUserImages(let userId):
             return "/0.4/\(userId)"
         case .getDigiTinderProfile:
-            return "/0.4"
+            return "/"
         }
     }
     
@@ -55,7 +57,7 @@ extension DTEndPointAPI : DTEndPointType {
         case .getDigiTinderProfile:
             return .requestParameters(bodyParams: nil,
                                       bodyEncoding: .urlEncoding,
-                                      urlParams: ["randomapi":""]) // parameters can be empty
+                                      urlParams: ["results":"50"]) // parameters can be empty
         default:
             return .request
         }

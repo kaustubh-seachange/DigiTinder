@@ -114,11 +114,48 @@ extension CoreDataStore {
         let nameModel = Name.init(title: dict["title"]!,
                                   first: dict["first"]!,
                                   last: dict["last"]!)
-        let locationModel = Location.init(street: dict["street"]!,
+        let timeZoneModel = Timezone.init(offset: dict["offset"]!,
+                                          timezoneDescription: dict["description"]!)
+        let StreetModel = Street.init(number: Int(dict["number"]!)!,
+                                      name: dict["name"]!)
+        let coordModel = Coordinates.init(latitude: dict[""]!,
+                                          longitude: dict[""]!)
+        let locationModel = Location.init(street: StreetModel,
                                           city: dict["city"]!,
                                           state: dict["state"]!,
-                                          zip: dict["zip"]!)
-        let userModel = TinderUserResponseModel.init(name: nameModel,
+                                          country: dict[""]!,
+                                          coordinates: coordModel,
+                                          timezone: timeZoneModel)
+        let idModel = ID.init(name: dict[""]!,
+                              value: dict[""]!)
+        let loginModel = Login.init(uuid: dict[""]!,
+            username: dict[""]!,
+            password: dict[""]!,
+            salt: dict[""]!,
+            md5: dict[""]!,
+            sha1: dict[""]!,
+            sha256: dict[""]!)
+        let dobModel = Dob.init(date: dict["date"]!,
+                                age: Int(dict["age"]!)!)
+        let registeredModel = Dob.init(date: dict["date"]!,
+                                       age: Int(dict["age"]!)!)
+        let pictureModel = Picture.init(large: dict["large"]!,
+            medium: dict["medium"]!,
+            thumbnail: dict["thumbnail"]!)
+        
+        let userModel  = TinderUserResponseModel.init(gender: dict["gender"]!,
+            name: nameModel,
+            location: locationModel,
+            email: dict["email"]!,
+            login: loginModel,
+            dob: dobModel,
+            registered: registeredModel,
+            phone: dict["phone"]!,
+            cell: dict["cell"]!,
+            id: idModel,
+            picture: pictureModel,
+            nat: dict["nat"]!)
+            /*let userModel = TinderUserResponseModel.init(name: nameModel,
                                                            location: locationModel,
                                                            gender: dict["gender"]!,
                                                            email: dict["email"]!,
@@ -133,7 +170,7 @@ extension CoreDataStore {
                                                            cell: dict["cell"]!,
                                                            ssn: dict["ssn"]!,
                                                            picture: dict["picture"]!,
-                                                           dob: dict["dob"]!)
+                                                           dob: dict["dob"]!) */
 
         return userModel
     }
@@ -162,37 +199,38 @@ extension CoreDataStore {
     
     func createTinderEntity(user: TinderUserResponseModel) -> NSManagedObject? {
         let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
-        if let tinderUserEntity = NSEntityDescription.insertNewObject(forEntityName: "TinderUser", into: context) as? TinderUser {
+        if let tinderUserEntity = NSEntityDescription.insertNewObject(forEntityName: "TinderUser",
+                                                                      into: context) as? TinderUser {
             tinderUserEntity.title = user.name.title
             tinderUserEntity.first = user.name.first
             tinderUserEntity.last = user.name.last
             
-            tinderUserEntity.street = user.location.street
+            tinderUserEntity.street = user.location.street.name
             tinderUserEntity.city = user.location.city
             tinderUserEntity.state = user.location.state
-            tinderUserEntity.zip = user.location.zip
+            tinderUserEntity.zip = user.location.street.name
 
-            tinderUserEntity.ssn = user.ssn
+            tinderUserEntity.ssn = user.nat
             tinderUserEntity.gender = user.gender
-            tinderUserEntity.dob = user.dob
-            tinderUserEntity.picture = user.picture
+            tinderUserEntity.dob = user.dob.date
+            tinderUserEntity.picture = user.picture.medium
             tinderUserEntity.email = user.email
             tinderUserEntity.phone = user.phone
             tinderUserEntity.cell = user.cell
 
             
-            tinderUserEntity.registered = user.registered
+            tinderUserEntity.registered = String(user.dob.age)
             let secureInfo = DTSecureInfo()
-            tinderUserEntity.username = secureInfo.secureName(using: user.md5,
-                                                              name: user.username)
-            tinderUserEntity.password = secureInfo.securePass(using: user.salt,
-                                                              name: user.username,
-                                                              pass: user.password)
+            tinderUserEntity.username = secureInfo.secureName(using: user.login.md5,
+                                                              name: user.login.username)
+            tinderUserEntity.password = secureInfo.securePass(using: user.login.salt,
+                                                              name: user.login.username,
+                                                              pass: user.login.password)
             // Do we need to stroe this keys?
-            tinderUserEntity.md5 = user.md5
-            tinderUserEntity.salt = user.salt
-            tinderUserEntity.sha1 = user.sha1
-            tinderUserEntity.sha256 = user.sha256
+            tinderUserEntity.md5 = user.login.md5
+            tinderUserEntity.salt = user.login.salt
+            tinderUserEntity.sha1 = user.login.sha1
+            tinderUserEntity.sha256 = user.login.sha256
             
             return tinderUserEntity
         }
