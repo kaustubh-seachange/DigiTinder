@@ -1,31 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="TinderUser" representedClassName=".TinderUser" syncable="YES">
-        <attribute name="cell" optional="YES" attributeType="String"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="String"/>
+        <attribute name="longitude" optional="YES" attributeType="String"/>
+        <relationship name="forLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="atCoordinates" inverseEntity="Location"/>
+    </entity>
+    <entity name="Dob" representedClassName="Dob" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasDob" inverseEntity="User"/>
+    </entity>
+    <entity name="ID" representedClassName="ID" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasID" inverseEntity="User"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String"/>
-        <attribute name="dob" optional="YES" attributeType="String"/>
-        <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="first" optional="YES" attributeType="String"/>
-        <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="last" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="postcode" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <relationship name="atCoordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinates" inverseName="forLocation" inverseEntity="Coordinates"/>
+        <relationship name="atTimezone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Timezone" inverseName="forLocation" inverseEntity="Timezone"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="isLocatedAt" inverseEntity="User"/>
+        <relationship name="onStreet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Street" inverseName="forLocation" inverseEntity="Street"/>
+    </entity>
+    <entity name="Login" representedClassName="Login" syncable="YES">
         <attribute name="md5" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="phone" optional="YES" attributeType="String"/>
-        <attribute name="picture" optional="YES" attributeType="String"/>
-        <attribute name="registered" optional="YES" attributeType="String"/>
         <attribute name="salt" optional="YES" attributeType="String"/>
-        <attribute name="seed" optional="YES" attributeType="String"/>
         <attribute name="sha1" optional="YES" attributeType="String"/>
         <attribute name="sha256" optional="YES" attributeType="String"/>
-        <attribute name="ssn" optional="YES" attributeType="String"/>
-        <attribute name="state" optional="YES" attributeType="String"/>
-        <attribute name="street" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
-        <attribute name="version" optional="YES" attributeType="String"/>
-        <attribute name="zip" optional="YES" attributeType="String"/>
+        <attribute name="uuid" optional="YES" attributeType="String"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="loginInfo" inverseEntity="User"/>
+    </entity>
+    <entity name="Name" representedClassName="Name" syncable="YES">
+        <attribute name="first" optional="YES" attributeType="String"/>
+        <attribute name="last" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasName" inverseEntity="User"/>
+    </entity>
+    <entity name="Picture" representedClassName="Picture" syncable="YES">
+        <attribute name="large" optional="YES" attributeType="String"/>
+        <attribute name="medium" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasPicture" inverseEntity="User"/>
+    </entity>
+    <entity name="Street" representedClassName="Street" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <relationship name="forLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="onStreet" inverseEntity="Location"/>
+    </entity>
+    <entity name="Timezone" representedClassName="Timezone" syncable="YES">
+        <attribute name="offset" optional="YES" attributeType="String"/>
+        <attribute name="timezoneDescription" optional="YES" attributeType="String"/>
+        <relationship name="forLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="atTimezone" inverseEntity="Location"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="cell" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="nat" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <relationship name="hasDob" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dob" inverseName="ofUser" inverseEntity="Dob"/>
+        <relationship name="hasID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ID" inverseName="ofUser" inverseEntity="ID"/>
+        <relationship name="hasName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Name" inverseName="ofUser" inverseEntity="Name"/>
+        <relationship name="hasPicture" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Picture" inverseName="ofUser" inverseEntity="Picture"/>
+        <relationship name="isLocatedAt" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="ofUser" inverseEntity="Location"/>
+        <relationship name="loginInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Login" inverseName="ofUser" inverseEntity="Login"/>
     </entity>
     <elements>
-        <element name="TinderUser" positionX="-63" positionY="-18" width="128" height="388"/>
+        <element name="Coordinates" positionX="386.3359375" positionY="135.94140625" width="128" height="88"/>
+        <element name="Dob" positionX="-104.78125" positionY="35.96484375" width="128" height="88"/>
+        <element name="ID" positionX="67.24609375" positionY="-57.12890625" width="128" height="88"/>
+        <element name="Location" positionX="229.890625" positionY="125.89453125" width="128" height="163"/>
+        <element name="Login" positionX="-106.05859375" positionY="146.515625" width="128" height="163"/>
+        <element name="Name" positionX="-104.33203125" positionY="331.74609375" width="128" height="103"/>
+        <element name="Picture" positionX="78.46875" positionY="316.4375" width="128" height="103"/>
+        <element name="Street" positionX="233.50390625" positionY="288.01171875" width="128" height="88"/>
+        <element name="Timezone" positionX="232.734375" positionY="-11.87890625" width="128" height="88"/>
+        <element name="User" positionX="77.3515625" positionY="76.2109375" width="128" height="208"/>
     </elements>
 </model>

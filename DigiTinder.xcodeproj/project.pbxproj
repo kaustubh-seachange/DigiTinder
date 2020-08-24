@@ -10,9 +10,6 @@
 		13B092172D4A39043CA27F96 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */; };
 		3209A89A24BCAE7F0043AF9C /* DigiTinderSwipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89824BCAE7F0043AF9C /* DigiTinderSwipeModel.swift */; };
 		3209A89B24BCAE7F0043AF9C /* DigiTinderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89924BCAE7F0043AF9C /* DigiTinderDataSource.swift */; };
-		3209A89D24BCAEB80043AF9C /* TinderUserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89C24BCAEB70043AF9C /* TinderUserResponseModel.swift */; };
-		3209A8A024BCAF150043AF9C /* TinderUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */; };
-		3209A8A124BCAF150043AF9C /* TinderUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */; };
 		3209A8A424BCAF3C0043AF9C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A8A324BCAF3C0043AF9C /* Extension.swift */; };
 		3209A8A724BCAFAA0043AF9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3209A8A524BCAFAA0043AF9C /* Main.storyboard */; };
 		32156F2924BDA326002594AF /* DigiTinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32156F2724BDA326002594AF /* DigiTinder.xcdatamodeld */; };
@@ -20,6 +17,28 @@
 		32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FBE24BB026F00582D96 /* DTSecureInfo.swift */; };
 		32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */; };
 		32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32437FD724BB152400582D96 /* DigiTinderView.swift */; };
+		324B44D224DC5DA90005A8EB /* DigiTinderUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324B44D124DC5DA90005A8EB /* DigiTinderUserModel.swift */; };
+		324ED7BE24DDBC940067C55A /* Timezone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED79F24DDBC940067C55A /* Timezone+CoreDataClass.swift */; };
+		324ED7BF24DDBC940067C55A /* Timezone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7A024DDBC940067C55A /* Timezone+CoreDataProperties.swift */; };
+		324ED7C024DDBC940067C55A /* Coordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7A224DDBC940067C55A /* Coordinates+CoreDataClass.swift */; };
+		324ED7C124DDBC940067C55A /* Coordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7A324DDBC940067C55A /* Coordinates+CoreDataProperties.swift */; };
+		324ED7C224DDBC940067C55A /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7A524DDBC940067C55A /* Location+CoreDataProperties.swift */; };
+		324ED7C324DDBC940067C55A /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7A624DDBC940067C55A /* Location+CoreDataClass.swift */; };
+		324ED7C524DDBC940067C55A /* Picture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7A924DDBC940067C55A /* Picture+CoreDataProperties.swift */; };
+		324ED7C624DDBC940067C55A /* Picture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7AA24DDBC940067C55A /* Picture+CoreDataClass.swift */; };
+		324ED7C724DDBC940067C55A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7AC24DDBC940067C55A /* User+CoreDataProperties.swift */; };
+		324ED7C824DDBC940067C55A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7AD24DDBC940067C55A /* User+CoreDataClass.swift */; };
+		324ED7CA24DDBC940067C55A /* Dob+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B024DDBC940067C55A /* Dob+CoreDataProperties.swift */; };
+		324ED7CB24DDBC940067C55A /* Dob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B124DDBC940067C55A /* Dob+CoreDataClass.swift */; };
+		324ED7CC24DDBC940067C55A /* Street+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B324DDBC940067C55A /* Street+CoreDataClass.swift */; };
+		324ED7CD24DDBC940067C55A /* Street+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B424DDBC940067C55A /* Street+CoreDataProperties.swift */; };
+		324ED7CE24DDBC940067C55A /* ID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B624DDBC940067C55A /* ID+CoreDataClass.swift */; };
+		324ED7CF24DDBC940067C55A /* ID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B724DDBC940067C55A /* ID+CoreDataProperties.swift */; };
+		324ED7D024DDBC940067C55A /* Name+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7B924DDBC940067C55A /* Name+CoreDataClass.swift */; };
+		324ED7D124DDBC940067C55A /* Name+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7BA24DDBC940067C55A /* Name+CoreDataProperties.swift */; };
+		324ED7D224DDBC940067C55A /* Login+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7BC24DDBC940067C55A /* Login+CoreDataProperties.swift */; };
+		324ED7D324DDBC940067C55A /* Login+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7BD24DDBC940067C55A /* Login+CoreDataClass.swift */; };
+		324ED7D724DDD8E40067C55A /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ED7D624DDD8E40067C55A /* CodingUserInfoKey.swift */; };
 		3280A65624BA3679005E74CE /* sampleresponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 3280A65524BA3679005E74CE /* sampleresponse.json */; };
 		3280A65B24BA39EA005E74CE /* DTRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65824BA39EA005E74CE /* DTRouter.swift */; };
 		3280A65C24BA39EA005E74CE /* DTHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A65924BA39EA005E74CE /* DTHTTP.swift */; };
@@ -61,9 +80,6 @@
 /* Begin PBXFileReference section */
 		3209A89824BCAE7F0043AF9C /* DigiTinderSwipeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderSwipeModel.swift; sourceTree = "<group>"; };
 		3209A89924BCAE7F0043AF9C /* DigiTinderDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderDataSource.swift; sourceTree = "<group>"; };
-		3209A89C24BCAEB70043AF9C /* TinderUserResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderUserResponseModel.swift; sourceTree = "<group>"; };
-		3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TinderUser+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TinderUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3209A8A324BCAF3C0043AF9C /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		3209A8A624BCAFAA0043AF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32156F2824BDA326002594AF /* DigiTinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DigiTinder.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +87,28 @@
 		32437FBE24BB026F00582D96 /* DTSecureInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTSecureInfo.swift; sourceTree = "<group>"; };
 		32437FD624BB152400582D96 /* DigiTinderFoundryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderFoundryView.swift; sourceTree = "<group>"; };
 		32437FD724BB152400582D96 /* DigiTinderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigiTinderView.swift; sourceTree = "<group>"; };
+		324B44D124DC5DA90005A8EB /* DigiTinderUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigiTinderUserModel.swift; sourceTree = "<group>"; };
+		324ED79F24DDBC940067C55A /* Timezone+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timezone+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7A024DDBC940067C55A /* Timezone+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timezone+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7A224DDBC940067C55A /* Coordinates+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinates+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7A324DDBC940067C55A /* Coordinates+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinates+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7A524DDBC940067C55A /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7A624DDBC940067C55A /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7A924DDBC940067C55A /* Picture+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Picture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7AA24DDBC940067C55A /* Picture+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Picture+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7AC24DDBC940067C55A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7AD24DDBC940067C55A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7B024DDBC940067C55A /* Dob+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dob+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7B124DDBC940067C55A /* Dob+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dob+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7B324DDBC940067C55A /* Street+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Street+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7B424DDBC940067C55A /* Street+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Street+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7B624DDBC940067C55A /* ID+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ID+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7B724DDBC940067C55A /* ID+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ID+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7B924DDBC940067C55A /* Name+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7BA24DDBC940067C55A /* Name+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Name+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7BC24DDBC940067C55A /* Login+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		324ED7BD24DDBC940067C55A /* Login+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+CoreDataClass.swift"; sourceTree = "<group>"; };
+		324ED7D624DDD8E40067C55A /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
 		3280A65524BA3679005E74CE /* sampleresponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleresponse.json; sourceTree = "<group>"; };
 		3280A65824BA39EA005E74CE /* DTRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTRouter.swift; sourceTree = "<group>"; };
 		3280A65924BA39EA005E74CE /* DTHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTHTTP.swift; sourceTree = "<group>"; };
@@ -169,6 +207,113 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		324ED79D24DDBC940067C55A /* CoreClasses */ = {
+			isa = PBXGroup;
+			children = (
+				324ED79E24DDBC940067C55A /* Timezone */,
+				324ED7A124DDBC940067C55A /* Coordinates */,
+				324ED7A424DDBC940067C55A /* Location */,
+				324ED7A824DDBC940067C55A /* Picture */,
+				324ED7AB24DDBC940067C55A /* User */,
+				324ED7AF24DDBC940067C55A /* Dob */,
+				324ED7B224DDBC940067C55A /* Street */,
+				324ED7B524DDBC940067C55A /* ID */,
+				324ED7B824DDBC940067C55A /* Name */,
+				324ED7BB24DDBC940067C55A /* Login */,
+			);
+			path = CoreClasses;
+			sourceTree = "<group>";
+		};
+		324ED79E24DDBC940067C55A /* Timezone */ = {
+			isa = PBXGroup;
+			children = (
+				324ED79F24DDBC940067C55A /* Timezone+CoreDataClass.swift */,
+				324ED7A024DDBC940067C55A /* Timezone+CoreDataProperties.swift */,
+			);
+			path = Timezone;
+			sourceTree = "<group>";
+		};
+		324ED7A124DDBC940067C55A /* Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7A224DDBC940067C55A /* Coordinates+CoreDataClass.swift */,
+				324ED7A324DDBC940067C55A /* Coordinates+CoreDataProperties.swift */,
+			);
+			path = Coordinates;
+			sourceTree = "<group>";
+		};
+		324ED7A424DDBC940067C55A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7A624DDBC940067C55A /* Location+CoreDataClass.swift */,
+				324ED7A524DDBC940067C55A /* Location+CoreDataProperties.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		324ED7A824DDBC940067C55A /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7AA24DDBC940067C55A /* Picture+CoreDataClass.swift */,
+				324ED7A924DDBC940067C55A /* Picture+CoreDataProperties.swift */,
+			);
+			path = Picture;
+			sourceTree = "<group>";
+		};
+		324ED7AB24DDBC940067C55A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7AD24DDBC940067C55A /* User+CoreDataClass.swift */,
+				324ED7AC24DDBC940067C55A /* User+CoreDataProperties.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		324ED7AF24DDBC940067C55A /* Dob */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7B124DDBC940067C55A /* Dob+CoreDataClass.swift */,
+				324ED7B024DDBC940067C55A /* Dob+CoreDataProperties.swift */,
+			);
+			path = Dob;
+			sourceTree = "<group>";
+		};
+		324ED7B224DDBC940067C55A /* Street */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7B324DDBC940067C55A /* Street+CoreDataClass.swift */,
+				324ED7B424DDBC940067C55A /* Street+CoreDataProperties.swift */,
+			);
+			path = Street;
+			sourceTree = "<group>";
+		};
+		324ED7B524DDBC940067C55A /* ID */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7B624DDBC940067C55A /* ID+CoreDataClass.swift */,
+				324ED7B724DDBC940067C55A /* ID+CoreDataProperties.swift */,
+			);
+			path = ID;
+			sourceTree = "<group>";
+		};
+		324ED7B824DDBC940067C55A /* Name */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7B924DDBC940067C55A /* Name+CoreDataClass.swift */,
+				324ED7BA24DDBC940067C55A /* Name+CoreDataProperties.swift */,
+			);
+			path = Name;
+			sourceTree = "<group>";
+		};
+		324ED7BB24DDBC940067C55A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				324ED7BD24DDBC940067C55A /* Login+CoreDataClass.swift */,
+				324ED7BC24DDBC940067C55A /* Login+CoreDataProperties.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3280A65724BA386E005E74CE /* Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +408,7 @@
 		32F31BCD24A8F75B00E07AAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3209A89C24BCAEB70043AF9C /* TinderUserResponseModel.swift */,
+				324B44D124DC5DA90005A8EB /* DigiTinderUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,9 +417,9 @@
 			isa = PBXGroup;
 			children = (
 				32156F2724BDA326002594AF /* DigiTinder.xcdatamodeld */,
+				324ED7D624DDD8E40067C55A /* CodingUserInfoKey.swift */,
 				32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */,
-				3209A89E24BCAF150043AF9C /* TinderUser+CoreDataClass.swift */,
-				3209A89F24BCAF150043AF9C /* TinderUser+CoreDataProperties.swift */,
+				324ED79D24DDBC940067C55A /* CoreClasses */,
 			);
 			path = Datastore;
 			sourceTree = "<group>";
@@ -552,28 +697,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3209A8A124BCAF150043AF9C /* TinderUser+CoreDataProperties.swift in Sources */,
+				324ED7D724DDD8E40067C55A /* CodingUserInfoKey.swift in Sources */,
 				32437FD924BB152400582D96 /* DigiTinderFoundryView.swift in Sources */,
+				324ED7C024DDBC940067C55A /* Coordinates+CoreDataClass.swift in Sources */,
+				324ED7CD24DDBC940067C55A /* Street+CoreDataProperties.swift in Sources */,
+				324ED7D224DDBC940067C55A /* Login+CoreDataProperties.swift in Sources */,
 				32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */,
+				324ED7D324DDBC940067C55A /* Login+CoreDataClass.swift in Sources */,
 				322147C024C0D25100DF7F66 /* CommonUtility.swift in Sources */,
+				324ED7C224DDBC940067C55A /* Location+CoreDataProperties.swift in Sources */,
+				324ED7C124DDBC940067C55A /* Coordinates+CoreDataProperties.swift in Sources */,
+				324ED7C324DDBC940067C55A /* Location+CoreDataClass.swift in Sources */,
+				324ED7C624DDBC940067C55A /* Picture+CoreDataClass.swift in Sources */,
+				324ED7CE24DDBC940067C55A /* ID+CoreDataClass.swift in Sources */,
+				324ED7BF24DDBC940067C55A /* Timezone+CoreDataProperties.swift in Sources */,
 				32F31B6924A8EE3D00E07AAF /* ViewController.swift in Sources */,
+				324ED7C524DDBC940067C55A /* Picture+CoreDataProperties.swift in Sources */,
 				3299EBDB24BA142100245711 /* DTNetworkManager.swift in Sources */,
+				324ED7CA24DDBC940067C55A /* Dob+CoreDataProperties.swift in Sources */,
 				3280A65C24BA39EA005E74CE /* DTHTTP.swift in Sources */,
 				3299EBE524BA16A000245711 /* DTResourceCaching.swift in Sources */,
+				324ED7D124DDBC940067C55A /* Name+CoreDataProperties.swift in Sources */,
+				324ED7CC24DDBC940067C55A /* Street+CoreDataClass.swift in Sources */,
+				324ED7C724DDBC940067C55A /* User+CoreDataProperties.swift in Sources */,
 				32F31B6524A8EE3D00E07AAF /* AppDelegate.swift in Sources */,
 				32437FBF24BB026F00582D96 /* DTSecureInfo.swift in Sources */,
 				3280A65D24BA39EA005E74CE /* DTEncoding.swift in Sources */,
 				32156F2924BDA326002594AF /* DigiTinder.xcdatamodeld in Sources */,
 				32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */,
-				3209A89D24BCAEB80043AF9C /* TinderUserResponseModel.swift in Sources */,
+				324B44D224DC5DA90005A8EB /* DigiTinderUserModel.swift in Sources */,
+				324ED7C824DDBC940067C55A /* User+CoreDataClass.swift in Sources */,
+				324ED7BE24DDBC940067C55A /* Timezone+CoreDataClass.swift in Sources */,
 				3209A89A24BCAE7F0043AF9C /* DigiTinderSwipeModel.swift in Sources */,
 				3280A65B24BA39EA005E74CE /* DTRouter.swift in Sources */,
 				32B5319724C1B72300243056 /* CommonUI.swift in Sources */,
+				324ED7D024DDBC940067C55A /* Name+CoreDataClass.swift in Sources */,
 				3209A8A424BCAF3C0043AF9C /* Extension.swift in Sources */,
 				32437FDA24BB152400582D96 /* DigiTinderView.swift in Sources */,
+				324ED7CB24DDBC940067C55A /* Dob+CoreDataClass.swift in Sources */,
 				32F31B6724A8EE3D00E07AAF /* SceneDelegate.swift in Sources */,
-				3209A8A024BCAF150043AF9C /* TinderUser+CoreDataClass.swift in Sources */,
 				3209A89B24BCAE7F0043AF9C /* DigiTinderDataSource.swift in Sources */,
+				324ED7CF24DDBC940067C55A /* ID+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -756,7 +920,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.workmetrik.digitinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -774,7 +938,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.workmetrik.digitinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

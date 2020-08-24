@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import CryptoSwift
+import UIKit
+//import CryptoSwift
 
 extension NSObject {
     func loggerMin(_ message: String, function: String = #function, line: Int = #line) {
@@ -73,8 +74,8 @@ extension Date{
     }
 }
 
-public extension CodingUserInfoKey {
+/*public extension CodingUserInfoKey {
     // Helper property to retrieve the Core Data managed object context
     static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")
-    static let context = CodingUserInfoKey(rawValue: "context")!
-}
+    //static let context = CodingUserInfoKey(rawValue: "context")!
+}*/

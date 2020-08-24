@@ -19,14 +19,14 @@ protocol DTNetworkRouter: class {
 }
 
 // MARK: - Network Router
-class DTRouter<EndPoint: DTEndPointType>: DTNetworkRouter {
+class DTRouter<EndPoint: DTEndPointType>: NSObject, DTNetworkRouter {
     private var task: URLSessionTask?
     
     func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
         do {
             let request = try self.buildRequest(from: route)
-            print("{\(#function):\(#line)} :) request.url: \(String(describing: request.url))")
+            self.loggerMin("\(String(describing:request.url))")
             task = session.dataTask(with: request, completionHandler: { data, response, error in
                 completion(data, response, error)
             })

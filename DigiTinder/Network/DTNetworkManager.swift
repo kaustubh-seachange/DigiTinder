@@ -25,17 +25,48 @@ enum DTResult<T>{
 }
 
 class DTNetworkManager {
-    
-    private static let entityName = "TinderUser"
     private let persistentContainer: NSPersistentContainer
-    
     init(persistentContainer: NSPersistentContainer) {
         self.persistentContainer = persistentContainer
     }
     
     static let environment : DTNetworkEnv = .devlopment
     let router = DTRouter<DTEndPointAPI>()
-    func getDigiTinderProfile(page: Int, completion: @escaping (_ results: [TinderUserResponseModel]?,_ error: String?)->()){
+    
+    func readStaticData(named: String) -> Data? {
+        do {
+            if let bundleUrl = Bundle.main.url(forResource: named, withExtension: "json"),
+                let jsonData = try String(contentsOf: bundleUrl).data(using: .utf8) {
+                return jsonData
+            }
+        }
+        catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    public func parseData(json: Data) -> [User]? {
+        do {
+            let decoder = JSONDecoder()
+            decoder.userInfo[CodingUserInfoKey.context!] = self.persistentContainer.viewContext
+
+            let data = try decoder.decode(ResponseData.self, from: json)
+            if data.users.count > 0 {
+                return data.users
+            } else  {
+                print("No Success")
+                return nil
+            }
+        } catch {
+            print("decode error")
+        }
+        return nil
+    }
+    
+    func getDigiTinderProfile(page: Int,
+                              completion: @escaping (_ results: [User]?,_ error: String?)->())
+    {
         router.request(.getDigiTinderProfile) { data, response, error in
             if error != nil {
                 completion(nil, DTNetworkResponse.requestfailed.rawValue)
@@ -51,11 +82,10 @@ class DTNetworkManager {
                     }
                     do {
                         let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        
-                        let parsedResponse = try decoder.decode(ResponseData.self, from: responseData)
-                        if parsedResponse.results.count > 0  {
-                            completion(parsedResponse.results, nil)
+                        decoder.userInfo[CodingUserInfoKey.context!] = self.persistentContainer.viewContext
+                        let parsed = try decoder.decode(ResponseData.self, from: responseData)
+                        if parsed.users.count > 0  {
+                            completion(parsed.users, nil)
                         } else  {
                             completion(nil, DTNetworkResponse.requestEmptyData.rawValue)
                         }

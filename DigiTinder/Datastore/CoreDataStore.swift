@@ -13,6 +13,7 @@ import CoreData
 class CoreDataStore: NSObject {
     
     static let sharedInstance = CoreDataStore()
+    static let UserEntityName = "User"
     private override init() {}
     
     // MARK: - Core Data stack
@@ -58,11 +59,7 @@ class CoreDataStore: NSObject {
             }
         }
     }
-}
-
-
-
-extension CoreDataStore {
+    
     func applicationDocumentsDirectory() {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "yo.BlogReaderApp" in the application's documents directory.
         if let url = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask).last {
@@ -74,7 +71,7 @@ extension CoreDataStore {
 extension CoreDataStore {
     func favouriteProfiles() -> [Any] {
         let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<TinderUser>(entityName: "TinderUser")
+        let fetchRequest = NSFetchRequest<User>(entityName: "User")
         let sortDescriptor1 = NSSortDescriptor(key: "email", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "phone", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
@@ -89,7 +86,7 @@ extension CoreDataStore {
     }
     
     func createDigiTinderViewModel(moArray: [NSManagedObject]) -> Any {
-        var array: [TinderUserResponseModel] = []
+        let array: [User] = []
         for item in moArray {
             var dict: [String: String] = [:]
             for attribute in item.entity.attributesByName {
@@ -98,90 +95,30 @@ extension CoreDataStore {
                     dict[attribute.key] = value as? String
                 }
             }
-            let aObj = self.creteModel(dict: dict)
-            if aObj != nil {
-                array.append((aObj as TinderUserResponseModel?)!)
-            }
-            else {
-                self.loggerMin("skipped...")
-            }
+//            let aObj = self.createModel(dict: dict)
+//            if aObj != nil {
+//                array.append((aObj as User?)!)
+//            }
+//            else {
+//                self.loggerMin("skipped...")
+//            }
             
         }
         return array
     }
     
-    func creteModel(dict: Dictionary<String, String>) -> TinderUserResponseModel? {
-        let nameModel = Name.init(title: dict["title"]!,
-                                  first: dict["first"]!,
-                                  last: dict["last"]!)
-        let timeZoneModel = Timezone.init(offset: dict["offset"]!,
-                                          timezoneDescription: dict["description"]!)
-        let StreetModel = Street.init(number: Int(dict["number"]!)!,
-                                      name: dict["name"]!)
-        let coordModel = Coordinates.init(latitude: dict[""]!,
-                                          longitude: dict[""]!)
-        let locationModel = Location.init(street: StreetModel,
-                                          city: dict["city"]!,
-                                          state: dict["state"]!,
-                                          country: dict[""]!,
-                                          coordinates: coordModel,
-                                          timezone: timeZoneModel)
-        let idModel = ID.init(name: dict[""]!,
-                              value: dict[""]!)
-        let loginModel = Login.init(uuid: dict[""]!,
-            username: dict[""]!,
-            password: dict[""]!,
-            salt: dict[""]!,
-            md5: dict[""]!,
-            sha1: dict[""]!,
-            sha256: dict[""]!)
-        let dobModel = Dob.init(date: dict["date"]!,
-                                age: Int(dict["age"]!)!)
-        let registeredModel = Dob.init(date: dict["date"]!,
-                                       age: Int(dict["age"]!)!)
-        let pictureModel = Picture.init(large: dict["large"]!,
-            medium: dict["medium"]!,
-            thumbnail: dict["thumbnail"]!)
-        
-        let userModel  = TinderUserResponseModel.init(gender: dict["gender"]!,
-            name: nameModel,
-            location: locationModel,
-            email: dict["email"]!,
-            login: loginModel,
-            dob: dobModel,
-            registered: registeredModel,
-            phone: dict["phone"]!,
-            cell: dict["cell"]!,
-            id: idModel,
-            picture: pictureModel,
-            nat: dict["nat"]!)
-            /*let userModel = TinderUserResponseModel.init(name: nameModel,
-                                                           location: locationModel,
-                                                           gender: dict["gender"]!,
-                                                           email: dict["email"]!,
-                                                           username: dict["username"]!,
-                                                           password: dict["password"]!,
-                                                           salt: dict["salt"]!,
-                                                           md5: dict["md5"]!,
-                                                           sha1: dict["sha1"]!,
-                                                           sha256: dict["sha256"]!,
-                                                           registered: dict["registered"]!,
-                                                           phone: dict["phone"]!,
-                                                           cell: dict["cell"]!,
-                                                           ssn: dict["ssn"]!,
-                                                           picture: dict["picture"]!,
-                                                           dob: dict["dob"]!) */
-
-        return userModel
-    }
-    
+//    func createModel(dict: Dictionary<String, String>) -> User? {
+//        let userModel: User
+//        
+//        return userModel
+//    }
 }
 
 extension CoreDataStore {
-    func findExistingUser(user: TinderUserResponseModel) -> Bool {
+    func findExistingUser(user: User) -> Bool {
         let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
-        fetchRequest.predicate = NSPredicate(format: "email == %@ && phone == %@", user.email, user.phone)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: User.self))
+        fetchRequest.predicate = NSPredicate(format: "email == %@ && phone == %@", user.email!, user.phone!)
         do {
             let objects = try context.fetch(fetchRequest) as? [NSManagedObject]
             if objects!.count > 0 {
@@ -197,40 +134,40 @@ extension CoreDataStore {
         }
     }
     
-    func createTinderEntity(user: TinderUserResponseModel) -> NSManagedObject? {
+    func createTinderEntity(user: User) -> NSManagedObject? {
         let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
-        if let tinderUserEntity = NSEntityDescription.insertNewObject(forEntityName: "TinderUser",
-                                                                      into: context) as? TinderUser {
-            tinderUserEntity.title = user.name.title
-            tinderUserEntity.first = user.name.first
-            tinderUserEntity.last = user.name.last
-            
-            tinderUserEntity.street = user.location.street.name
-            tinderUserEntity.city = user.location.city
-            tinderUserEntity.state = user.location.state
-            tinderUserEntity.zip = user.location.street.name
-
-            tinderUserEntity.ssn = user.nat
-            tinderUserEntity.gender = user.gender
-            tinderUserEntity.dob = user.dob.date
-            tinderUserEntity.picture = user.picture.medium
-            tinderUserEntity.email = user.email
-            tinderUserEntity.phone = user.phone
-            tinderUserEntity.cell = user.cell
-
-            
-            tinderUserEntity.registered = String(user.dob.age)
-            let secureInfo = DTSecureInfo()
-            tinderUserEntity.username = secureInfo.secureName(using: user.login.md5,
-                                                              name: user.login.username)
-            tinderUserEntity.password = secureInfo.securePass(using: user.login.salt,
-                                                              name: user.login.username,
-                                                              pass: user.login.password)
-            // Do we need to stroe this keys?
-            tinderUserEntity.md5 = user.login.md5
-            tinderUserEntity.salt = user.login.salt
-            tinderUserEntity.sha1 = user.login.sha1
-            tinderUserEntity.sha256 = user.login.sha256
+        if let tinderUserEntity = NSEntityDescription.insertNewObject(forEntityName: "User",
+                                                                      into: context) as? User {
+//            tinderUserEntity.title = user.name.title
+//            tinderUserEntity.first = user.name.first
+//            tinderUserEntity.last = user.name.last
+//
+//            tinderUserEntity.street = user.location.street.name
+//            tinderUserEntity.city = user.location.city
+//            tinderUserEntity.state = user.location.state
+//            tinderUserEntity.zip = user.location.street.name
+//
+//            tinderUserEntity.ssn = user.nat
+//            tinderUserEntity.gender = user.gender
+//            tinderUserEntity.dob = user.dob.date
+//            tinderUserEntity.picture = user.picture.medium
+//            tinderUserEntity.email = user.email
+//            tinderUserEntity.phone = user.phone
+//            tinderUserEntity.cell = user.cell
+//
+//
+//            tinderUserEntity.registered = String(user.dob.age)
+//            let secureInfo = DTSecureInfo()
+//            tinderUserEntity.username = secureInfo.secureName(using: user.login.md5,
+//                                                              name: user.login.username)
+//            tinderUserEntity.password = secureInfo.securePass(using: user.login.salt,
+//                                                              name: user.login.username,
+//                                                              pass: user.login.password)
+//            // Do we need to stroe this keys?
+//            tinderUserEntity.md5 = user.login.md5
+//            tinderUserEntity.salt = user.login.salt
+//            tinderUserEntity.sha1 = user.login.sha1
+//            tinderUserEntity.sha256 = user.login.sha256
             
             return tinderUserEntity
         }
@@ -240,7 +177,7 @@ extension CoreDataStore {
     func clearData() {
         do {
             let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: User.self))
             do {
                 let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
                 _ = objects.map{$0.map{context.delete($0)}}
@@ -251,10 +188,10 @@ extension CoreDataStore {
         }
     }
     
-    func removeTinderUser(user: TinderUserResponseModel) -> Bool {
+    func removeTinderUser(user: User) -> Bool {
         let context = CoreDataStore.sharedInstance.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
-        fetchRequest.predicate = NSPredicate(format: "email == %@ && phone == %@", user.email, user.phone)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: User.self))
+        fetchRequest.predicate = NSPredicate(format: "email == %@ && phone == %@", user.email!, user.phone!)
         do {
             let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
             _ = objects.map{$0.map{context.delete($0)}}

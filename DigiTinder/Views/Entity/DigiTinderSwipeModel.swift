@@ -15,7 +15,7 @@ struct DigiTinderSwipeModel {
     var name : String
     var subText: String
     
-    var dob: Int
+    var dob: String
     var email: String
 
     var city: String
@@ -27,7 +27,7 @@ struct DigiTinderSwipeModel {
     var privacyInfo: String
     var isMarkedFavourite: Bool
     
-    init(bgColor: UIColor, image: String, name: String, subText: String, dob: Int, email: String, city: String, state: String, zip: String, phone: String, cell: String, privacyInfo: String, isMarkedFavourite: Bool) {
+    init(bgColor: UIColor, image: String, name: String, subText: String, dob: String, email: String, city: String, state: String, zip: String, phone: String, cell: String, privacyInfo: String, isMarkedFavourite: Bool) {
         self.bgColor = bgColor
         self.image = image
         self.name = name

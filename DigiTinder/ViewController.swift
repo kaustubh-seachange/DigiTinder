@@ -12,7 +12,7 @@ import CoreData
 class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     var previousProfileViewIndex: Int = 0
     var profileDataSource = [DigiTinderSwipeModel]()
-    var responseForTinderProfiles = [TinderUserResponseModel]() // This needs to be reset, once emptyView is called and n/w request is completed.
+    var responseForTinderProfiles = [User]() // This needs to be reset, once emptyView is called and n/w request is completed.
     var digiTinderPresenterView : DigiTinderPresenterView!
     var commonUI: CommonUI!
     
@@ -20,8 +20,8 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     
     lazy var fetchedResultController: NSFetchedResultsController<NSFetchRequestResult> = {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: TinderUser.self))
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "ssn", ascending: true)]
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: User.self))
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "email", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStore.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
         return frc
@@ -73,6 +73,13 @@ class ViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
 // MARK: - Request/Response.
 extension ViewController {
+    func loadStaticProfiles() {
+        if let data = self.networkManager!.readStaticData(named: "sampleresponse") {
+            let aArray = self.networkManager!.parseData(json: data)!
+            self.loggerMin("found \(aArray.count), users")
+        }
+    }
+    
     func getProfiles() {
         let aFrame = CGRect(x: self.view.frame.width/2,
                             y: self.view.frame.height/2,
@@ -90,7 +97,7 @@ extension ViewController {
                 var isProfileSavedToDataSource = false
                 self.responseForTinderProfiles.removeAll() // Array Flushed.
                 self.profileDataSource.removeAll()
-                for result in results! as [TinderUserResponseModel] {
+                for result in results! as [User] {
                     isProfileSavedToDataSource = self.addProfileDataSource(user: result,
                                                                         isFavourite: false)
                 }
@@ -121,19 +128,19 @@ extension ViewController {
         }
     }
     
-    func addProfileDataSource(user: TinderUserResponseModel!, isFavourite: Bool) -> Bool {
+    func addProfileDataSource(user: User!, isFavourite: Bool) -> Bool {
         let element = DigiTinderSwipeModel(bgColor: .white,
-                                           image: self.secureURLRequest(url: user.picture.medium),
+                                           image: self.secureURLRequest(url: (user.hasPicture?.medium)!),
                                            name: self.getProfileDisplayName(user: user),
                                            subText: self.getProfileDetails(user: user),
-                                           dob: self.getTinderUserAge(dob: user.dob.date),
-                                           email: user.email,
-                                           city: user.location.city,
-                                           state: user.location.state,
-                                           zip: user.location.street.name,
-                                           phone: user.phone,
-                                           cell: user.cell,
-                                           privacyInfo: user.nat,
+                                           dob: "\(user.hasDob!.age)",
+                                           email: user.email!,
+                                           city: (user.isLocatedAt?.city)!,
+                                           state: (user.isLocatedAt?.state)!,
+                                           zip: "\(String(describing: user.isLocatedAt!.postcode))",
+                                           phone: user.phone!,
+                                           cell: user.cell!,
+                                           privacyInfo: user.nat!,
                                            isMarkedFavourite: isFavourite)
         profileDataSource.append(element)
         responseForTinderProfiles.append(user)
@@ -144,21 +151,22 @@ extension ViewController {
 // MARK: - CoreData Method(s).
 extension ViewController {
     func loadFavouriteProfiles() {
-//        let tinderFavourites = CoreDataStore.sharedInstance.favouriteProfiles()
-//        self.loggerMin("Found \(tinderFavourites.count) Favourite Profile(s)")
-//        var isFavouriteFound = false
-//        for tinderProfile in tinderFavourites {
-//            isFavouriteFound = self.addProfileDataSource(user: tinderProfile as? TinderUserResponseModel, isFavourite: true)
-//        }
-//        if isFavouriteFound {
-//            digiTinderPresenterView.reloadData()
-//        }
-//        else {
-            self.getProfiles()
-        //}
+        let tinderFavourites = CoreDataStore.sharedInstance.favouriteProfiles()
+        self.loggerMin("Found \(tinderFavourites.count) Favourite Profile(s)")
+        var isFavouriteFound = false
+        for tinderProfile in tinderFavourites {
+            isFavouriteFound = self.addProfileDataSource(user: tinderProfile as? User, isFavourite: true)
+        }
+        if isFavouriteFound {
+            digiTinderPresenterView.reloadData()
+        }
+        else {
+            self.loadStaticProfiles()
+            //self.getProfiles()
+        }
     }
     
-    private func saveTinderUser(user: TinderUserResponseModel) -> Bool {
+    private func saveTinderUser(user: User) -> Bool {
         let isUserExits = CoreDataStore.sharedInstance.findExistingUser(user: user)
         if (isUserExits) {
             return true
@@ -173,7 +181,7 @@ extension ViewController {
         }
     }
     
-    private func removeFavouriteUser(user: TinderUserResponseModel) -> Bool {
+    private func removeFavouriteUser(user: User) -> Bool {
         return CoreDataStore.sharedInstance.removeTinderUser(user: user)
     }
     
@@ -206,13 +214,19 @@ extension ViewController {
         return comps.string!
     }
     
-    func getProfileDisplayName(user: TinderUserResponseModel) -> String {
-        let profileName = "\(user.name.title.capitalizingFirstLetter()) \(user.name.first.capitalizingFirstLetter()) \(user.name.last.capitalizingFirstLetter())"
+    func getProfileDisplayName(user: User) -> String {
+        let aTitle = user.hasName?.title?.capitalizingFirstLetter()
+        let afirstName = user.hasName?.first?.capitalizingFirstLetter()
+        let alastName = user.hasName?.last?.capitalizingFirstLetter()
+        let profileName = "\(String(describing: aTitle)) \(String(describing: afirstName)) \(String(describing: alastName))"
         return profileName
     }
     
-    func getProfileDetails(user: TinderUserResponseModel) -> String {
-        let profileDetails = "\(user.gender.capitalizingFirstLetter()), \(user.location.city.capitalizingFirstLetter())"
+    func getProfileDetails(user: User) -> String {
+        let aGender = user.hasName?.title?.capitalizingFirstLetter()
+        let aCity = user.isLocatedAt?.city?.capitalizingFirstLetter()
+        let aState = user.isLocatedAt?.state?.capitalizingFirstLetter()
+        let profileDetails = "\(String(describing: aGender)), \(String(describing: aCity)), \(String(describing: aState))"
         return profileDetails
     }
     
@@ -246,7 +260,8 @@ extension ViewController : DigiTinderDataSource {
     func emptyView() {
         self.loggerMin("datasource: \(self.profileDataSource.count)")
         self.previousProfileViewIndex = self.profileDataSource.count
-        self.getProfiles()
+        self.loadStaticProfiles()
+        //self.getProfiles()
     }
 
     func markProfile(asFavourite: Bool, using profileData: DigiTinderSwipeModel) {

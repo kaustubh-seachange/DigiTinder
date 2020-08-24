@@ -13,15 +13,15 @@ import Foundation
 // Storing certain information in keychain is OOS for Test is concerned, However CryptoSwift Pod is used for encryption of name and pass.
 class DTSecureInfo {
     func securePass(using salt: String, name: String, pass: String) -> String {
-        return "\(pass).\(name).\(salt)".sha256()
+        return "\(pass).\(name).\(salt)"//.sha256()
     }
     
     func secureName(using salt: String, name: String) -> String {
-        return "\(name).\(salt)".md5()
+        return "\(name).\(salt)"//.md5()
     }
     
     func other(info: String, using salt: String) -> String {
-        return "\(info).\(salt)".sha256()
+        return "\(info).\(salt)"//.sha256()
     }
 
 }
