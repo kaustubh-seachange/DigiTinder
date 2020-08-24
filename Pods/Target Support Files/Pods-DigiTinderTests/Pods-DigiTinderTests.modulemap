@@ -1,6 +1,0 @@
-framework module Pods_DigiTinderTests {
-  umbrella header "Pods-DigiTinderTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

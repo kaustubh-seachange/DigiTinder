@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13B092172D4A39043CA27F96 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */; };
 		3209A89A24BCAE7F0043AF9C /* DigiTinderSwipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89824BCAE7F0043AF9C /* DigiTinderSwipeModel.swift */; };
 		3209A89B24BCAE7F0043AF9C /* DigiTinderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A89924BCAE7F0043AF9C /* DigiTinderDataSource.swift */; };
 		3209A8A424BCAF3C0043AF9C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209A8A324BCAF3C0043AF9C /* Extension.swift */; };
@@ -56,8 +55,6 @@
 		32F31BCC24A8F43400E07AAF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 32F31BCB24A8F43400E07AAF /* README.md */; };
 		32F31BD724A8F75B00E07AAF /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */; };
 		32F31BD924A8F75B00E07AAF /* DTEndpointAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */; };
-		4676C8D4CF7BD6F34BB07169 /* Pods_DigiTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */; };
-		BC2AFFBC0F46E80513F91574 /* Pods_DigiTinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,15 +129,6 @@
 		32F31BCB24A8F43400E07AAF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		32F31BD024A8F75B00E07AAF /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		32F31BD324A8F75B00E07AAF /* DTEndpointAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTEndpointAPI.swift; sourceTree = "<group>"; };
-		6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.release.xcconfig"; sourceTree = "<group>"; };
-		99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A68245652CED81BABE5A94EB /* Pods-DigiTinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinderTests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinderTests/Pods-DigiTinderTests.release.xcconfig"; sourceTree = "<group>"; };
-		AF04DC50A6A716EA289CBA40 /* Pods-DigiTinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinder/Pods-DigiTinder.debug.xcconfig"; sourceTree = "<group>"; };
-		B2E6B7DB6674C97A52A9CABA /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.release.xcconfig"; sourceTree = "<group>"; };
-		BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigiTinder_DigiTinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2F141836F7BEEB688E04162 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinder-DigiTinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinder-DigiTinderUITests/Pods-DigiTinder-DigiTinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F492CEC97837D7A55423D114 /* Pods-DigiTinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigiTinderTests.debug.xcconfig"; path = "Target Support Files/Pods-DigiTinderTests/Pods-DigiTinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4676C8D4CF7BD6F34BB07169 /* Pods_DigiTinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC2AFFBC0F46E80513F91574 /* Pods_DigiTinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +150,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B092172D4A39043CA27F96 /* Pods_DigiTinder_DigiTinderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +338,6 @@
 				3299EBDE24BA154200245711 /* Testing */,
 				32F31B6224A8EE3D00E07AAF /* Products */,
 				7105D3194EE8FD89D596C4A6 /* Pods */,
-				A8B4A562E9F0465DBB583EF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -436,24 +420,8 @@
 		7105D3194EE8FD89D596C4A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF04DC50A6A716EA289CBA40 /* Pods-DigiTinder.debug.xcconfig */,
-				8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */,
-				D2F141836F7BEEB688E04162 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */,
-				B2E6B7DB6674C97A52A9CABA /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */,
-				F492CEC97837D7A55423D114 /* Pods-DigiTinderTests.debug.xcconfig */,
-				A68245652CED81BABE5A94EB /* Pods-DigiTinderTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		A8B4A562E9F0465DBB583EF2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				99F4FB5C2778D8FABC693212 /* Pods_DigiTinder.framework */,
-				BAF94D8ED53900C91B7434BF /* Pods_DigiTinder_DigiTinderUITests.framework */,
-				6083C3DA9231126CDD85B7B7 /* Pods_DigiTinderTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,7 +431,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F31B8E24A8EE4000E07AAF /* Build configuration list for PBXNativeTarget "DigiTinder" */;
 			buildPhases = (
-				F7EF5E1432EE842DE67D2517 /* [CP] Check Pods Manifest.lock */,
 				32F31B5D24A8EE3D00E07AAF /* Sources */,
 				32F31B5E24A8EE3D00E07AAF /* Frameworks */,
 				32F31B5F24A8EE3D00E07AAF /* Resources */,
@@ -481,7 +448,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F31B9124A8EE4000E07AAF /* Build configuration list for PBXNativeTarget "DigiTinderTests" */;
 			buildPhases = (
-				AA45F2D34C493A5B348F46C7 /* [CP] Check Pods Manifest.lock */,
 				32F31B7624A8EE4000E07AAF /* Sources */,
 				32F31B7724A8EE4000E07AAF /* Frameworks */,
 				32F31B7824A8EE4000E07AAF /* Resources */,
@@ -500,7 +466,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32F31B9424A8EE4000E07AAF /* Build configuration list for PBXNativeTarget "DigiTinderUITests" */;
 			buildPhases = (
-				798B6385498A4878EBFDFA74 /* [CP] Check Pods Manifest.lock */,
 				32F31B8124A8EE4000E07AAF /* Sources */,
 				32F31B8224A8EE4000E07AAF /* Frameworks */,
 				32F31B8324A8EE4000E07AAF /* Resources */,
@@ -586,75 +551,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		798B6385498A4878EBFDFA74 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DigiTinder-DigiTinderUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA45F2D34C493A5B348F46C7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DigiTinderTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F7EF5E1432EE842DE67D2517 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DigiTinder-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32F31B5D24A8EE3D00E07AAF /* Sources */ = {
@@ -872,7 +768,6 @@
 		};
 		32F31B8F24A8EE4000E07AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF04DC50A6A716EA289CBA40 /* Pods-DigiTinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -890,7 +785,6 @@
 		};
 		32F31B9024A8EE4000E07AAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E575221BE674C98C95F7568 /* Pods-DigiTinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -908,7 +802,6 @@
 		};
 		32F31B9224A8EE4000E07AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F492CEC97837D7A55423D114 /* Pods-DigiTinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -930,7 +823,6 @@
 		};
 		32F31B9324A8EE4000E07AAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A68245652CED81BABE5A94EB /* Pods-DigiTinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -952,7 +844,6 @@
 		};
 		32F31B9524A8EE4000E07AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2F141836F7BEEB688E04162 /* Pods-DigiTinder-DigiTinderUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -972,7 +863,6 @@
 		};
 		32F31B9624A8EE4000E07AAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2E6B7DB6674C97A52A9CABA /* Pods-DigiTinder-DigiTinderUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
