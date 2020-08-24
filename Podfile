@@ -9,7 +9,7 @@ target 'DigiTinder' do
   #pod 'AlamofireImage', '~> 3.3'
   #pod 'PKHUD', '~> 5.0'
   #pod 'TinderSwipeView'
-  pod 'CryptoSwift', '~> 1.0'
+  #pod 'CryptoSwift', '~> 1.0'
 
   target 'DigiTinderTests' do
     inherit! :search_paths
