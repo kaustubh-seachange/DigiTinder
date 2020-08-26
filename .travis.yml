@@ -1,0 +1,5 @@
+ language:
+   - swift
+ osx_image: xcode10
+ script:
+   - xcodebuild -scheme DigiTinder -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=10.0' build test

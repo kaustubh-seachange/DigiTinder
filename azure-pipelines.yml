@@ -7,7 +7,12 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'macos-10.14'
+
+variables:
+  - group: ios-pipeline
+
+  
 
 steps:
 - task: Xcode@5
